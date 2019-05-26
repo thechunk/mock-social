@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigator renders correctly 1`] = `
+<Navigator
+  onGestureBegin={[Function]}
+  onGestureCanceled={[Function]}
+  onGestureEnd={[Function]}
+  onTransitionStart={[Function]}
+/>
+`;
