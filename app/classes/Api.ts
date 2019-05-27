@@ -32,7 +32,7 @@ const apiRequest = <T extends any>(url: RequestInfo, method?: HttpMethod, body?:
 const apiBaseUrl = Config.API_BASE_URL;
 
 export interface IUser {
-    id: Number,
+    id: number,
     name: String,
     username: String,
     email: String
