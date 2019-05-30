@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import {Text} from 'react-native';
 
 interface IUserListCell {
     key: number,
     title: String
 }
-const UserListCell: React.FunctionComponent<IUserListCell> = ({title}) => (
-    <Text>{title}</Text>
-);
+class UserListCell extends PureComponent<IUserListCell> {
+    render() {
+        return <Text>{this.props.title}</Text>
+    }
+}
 
 export default UserListCell;

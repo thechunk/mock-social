@@ -1,29 +1,12 @@
-import React from 'react';
-import {IUsersApi, IUser} from "../classes/Api";
+import React, {PureComponent} from 'react';
 import UserListCell from "./UserListCell";
+import {IWithUserListDataProps} from "../hoc/withUserListData";
 
-interface IUserList {
-    api: IUsersApi
-}
-interface IUserListState {
-    data: Array<IUser>
-}
-class UserList extends React.Component<IUserList, IUserListState> {
-    constructor(props: IUserList) {
-        super(props);
-        this.state = {data: []};
-    }
-
-    componentDidMount(): void {
-        this.props.api.getAll()
-            .then((resp) => {
-                this.setState({data: resp})
-            })
-            .catch(console.warn)
-    }
-
+class UserList extends PureComponent<IWithUserListDataProps> {
     render() {
-        return this.state.data.map((v) => <UserListCell key={v.id} title={v.name} />);
+        return this.props.users != null
+            ? this.props.users.map(v => <UserListCell key={v.id} title={v.name} />)
+            : null;
     }
 }
 

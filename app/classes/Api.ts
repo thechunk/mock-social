@@ -15,10 +15,7 @@ const apiUrl = (baseUrl: String, path: ApiPath): RequestInfo => {
     return `${baseUrl}${path}` as RequestInfo;
 };
 
-interface IPromiseClosure<T> {
-    (): Promise<T>
-}
-const apiRequest = <T extends any>(url: RequestInfo, method?: HttpMethod, body?: String): IPromiseClosure<T> => (() => (
+const apiRequest = <T extends any>(url: RequestInfo, method?: HttpMethod, body?: String) => ((): Promise<T> => (
     fetch(url, {
         method: method ? method : HttpMethod.Get,
         headers: {
