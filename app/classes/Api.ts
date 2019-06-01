@@ -36,10 +36,15 @@ export interface IUser {
 }
 export interface IUsersApi {
     getAll(): Promise<Array<IUser>>;
+    getById(id: number): Promise<IUser>;
 }
 class UsersApi implements IUsersApi {
     public getAll() {
         return apiRequest<Array<IUser>>(apiUrl(apiBaseUrl, ApiPath.Users))()
+    }
+
+    public getById(id: number) {
+        return apiRequest<IUser>(`${apiUrl(apiBaseUrl, ApiPath.Users)}/${id}`)()
     }
 }
 const Users = new UsersApi();

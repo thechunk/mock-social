@@ -5,6 +5,6 @@ import {shallow} from "enzyme";
 
 describe('UserList', () => {
     it('renders correctly', () => {
-        expect(shallow(<UserList />)).toMatchSnapshot();
+        expect(shallow(<UserList users={[]} />)).toMatchSnapshot();
     });
 });

@@ -1,14 +1,14 @@
 import React from 'react';
 import {createStackNavigator} from 'react-navigation';
-import UserList from "./UserList";
-import withUserListData from "../hoc/withUserListData";
+import UserList from "./user-list/UserList";
+import UserDetail from "./user-detail/UserDetail";
 
 const Navigator = createStackNavigator({
     UserList: {
-        screen: () => {
-            const WrappedUserList = withUserListData(UserList);
-            return <WrappedUserList />
-        }
+        screen: UserList
+    },
+    UserDetail: {
+        screen: UserDetail
     }
 });
 export default Navigator;

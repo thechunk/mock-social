@@ -30,6 +30,7 @@ exports[`App renders correctly 1`] = `
       "reset": [Function],
       "router": Object {
         "childRouters": Object {
+          "UserDetail": null,
           "UserList": null,
         },
         "getActionCreators": [Function],
@@ -47,7 +48,7 @@ exports[`App renders correctly 1`] = `
         "key": "StackRouterRoot",
         "routes": Array [
           Object {
-            "key": "id-1558886602643-0",
+            "key": "id-1559385421530-0",
             "routeName": "UserList",
           },
         ],
@@ -84,6 +85,7 @@ exports[`App renders correctly 1`] = `
         "reset": [Function],
         "router": Object {
           "childRouters": Object {
+            "UserDetail": null,
             "UserList": null,
           },
           "getActionCreators": [Function],
@@ -101,7 +103,7 @@ exports[`App renders correctly 1`] = `
           "key": "StackRouterRoot",
           "routes": Array [
             Object {
-              "key": "id-1558886602643-0",
+              "key": "id-1559385421530-0",
               "routeName": "UserList",
             },
           ],

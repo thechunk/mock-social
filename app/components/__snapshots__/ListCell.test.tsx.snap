@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListCell renders correctly 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+>
+  <View />
+</TouchableOpacity>
+`;
