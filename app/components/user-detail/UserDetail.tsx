@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {PureComponent} from "react";
-import {Text, View} from "react-native";
+import {Image, Text, View} from "react-native";
 import withUserData, {IWithUserDataProps, IWithUserDataOptionalProps} from "../../hoc/withUserData";
 import withNavigationParamsAsProps, {IWithNavigationParamsAsProps} from "../../hoc/withNavigationParamsAsProps";
 import UserDetailTabs from "./UserDetailTabs";

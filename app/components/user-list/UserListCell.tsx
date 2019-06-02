@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {GestureResponderEvent, Text} from 'react-native';
-import ListCell from "../ListCell";
+import ListCell from "../list/ListCell";
 
 interface IUserListCell {
     key: number,

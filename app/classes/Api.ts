@@ -1,26 +1,35 @@
 import Config from 'react-native-config';
 
-export enum ApiPath {
-    Users = '/users'
+enum ApiPath {
+    Users = '/users',
+    Albums = '/albums',
+    Photos = '/photos'
 }
-export enum HttpMethod {
+enum ApiQueryParam {
+    UserId = 'userId',
+    AlbumId = 'albumId'
+}
+enum HttpMethod {
     Get = 'GET',
     Post = 'POST',
     Put = 'PUT',
     Patch = 'PATCH',
     Delete = 'DELETE'
 }
+enum MimeType {
+    ApplicationJson = 'application/json'
+}
 
-const apiUrl = (baseUrl: String, path: ApiPath): RequestInfo => {
-    return `${baseUrl}${path}` as RequestInfo;
+const apiUrl = (baseUrl: string, path: ApiPath, query?: string): RequestInfo => {
+    return `${baseUrl}${path}${query ? `?${query}` : ''}` as RequestInfo;
 };
 
-const apiRequest = <T extends any>(url: RequestInfo, method?: HttpMethod, body?: String) => ((): Promise<T> => (
+const apiRequest = <T extends any>(url: RequestInfo, method?: HttpMethod, body?: string) => ((): Promise<T> => (
     fetch(url, {
         method: method ? method : HttpMethod.Get,
         headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
+            Accept: MimeType.ApplicationJson,
+            'Content-Type': MimeType.ApplicationJson
         },
         body: body != null && body.length > 0 ? JSON.stringify(body) : null
     })
@@ -28,16 +37,6 @@ const apiRequest = <T extends any>(url: RequestInfo, method?: HttpMethod, body?:
 ));
 const apiBaseUrl = Config.API_BASE_URL;
 
-export interface IUser {
-    id: number,
-    name: String,
-    username: String,
-    email: String
-}
-export interface IUsersApi {
-    getAll(): Promise<Array<IUser>>;
-    getById(id: number): Promise<IUser>;
-}
 class UsersApi implements IUsersApi {
     public getAll() {
         return apiRequest<Array<IUser>>(apiUrl(apiBaseUrl, ApiPath.Users))()
@@ -49,4 +48,22 @@ class UsersApi implements IUsersApi {
 }
 const Users = new UsersApi();
 
+class AlbumsApi implements IAlbumsApi {
+    public getAllByUserId(id: number) {
+        const query = `${ApiQueryParam.UserId}=${id}`;
+        return apiRequest<Array<IAlbum>>(apiUrl(apiBaseUrl, ApiPath.Albums, query))()
+    }
+}
+const Albums = new AlbumsApi();
+
+class PhotosApi implements IPhotosApi {
+    public getAllByAlbumId(id: number) {
+        const query = `${ApiQueryParam.AlbumId}=${id}`;
+        return apiRequest<Array<IPhoto>>(apiUrl(apiBaseUrl, ApiPath.Photos, query))()
+    }
+}
+const Photos = new PhotosApi();
+
 export {Users as UsersApi};
+export {Albums as AlbumsApi};
+export {Photos as PhotosApi};

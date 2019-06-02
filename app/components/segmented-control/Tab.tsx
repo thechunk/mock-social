@@ -3,10 +3,6 @@ import {PureComponent} from "react";
 import {Text, TouchableOpacity, View} from 'react-native';
 import {SegmentedControlContext} from "./SegmentedControl";
 
-export interface ITab {
-    id: number,
-    title: string
-}
 export default class Tab extends PureComponent<ITab> {
     static contextType = SegmentedControlContext;
 

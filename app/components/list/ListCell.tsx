@@ -1,10 +1,7 @@
 import * as React from 'react';
 import {PureComponent} from "react";
-import {GestureResponderEvent, TouchableOpacity, View} from "react-native";
+import {TouchableOpacity, View} from "react-native";
 
-export interface IListCell {
-    onPress?: (event: GestureResponderEvent) => void;
-}
 export default class ListCell extends PureComponent<IListCell> {
     render() {
         return (

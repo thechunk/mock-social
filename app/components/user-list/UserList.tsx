@@ -3,7 +3,6 @@ import UserListCell from "./UserListCell";
 import withUserListData, {IWithUserListDataProps} from "../../hoc/withUserListData";
 import {FlatList, GestureResponderEvent} from "react-native";
 import {NavigationScreenProps, withNavigation} from "react-navigation";
-import {IUser} from "../../classes/Api";
 import {IWithUserDataOptionalProps} from "../../hoc/withUserData";
 
 class UserList extends PureComponent<IWithUserListDataProps & NavigationScreenProps> {

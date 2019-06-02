@@ -10,12 +10,6 @@ const SegmentedControlContext: Context<ISegmentedControlContext> = createContext
     setSelectedTab: (id: number) => {}
 });
 
-export interface ISegmentedControl {
-}
-export interface ISegmentedControlContext {
-    selectedTab: number,
-    setSelectedTab: (id: number) => void
-}
 const SegmentedControl: FunctionComponent<ISegmentedControl> = (props) => {
     const [selectedTab, setSelectedTab] = useState<number>(0);
 
