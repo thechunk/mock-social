@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from 'react-navigation';
-import UserList from "./user-list/UserList";
-import UserDetail from "./user-detail/UserDetail";
+import {UserList} from './user-list';
+import {UserDetail} from './user-detail';
 
 const Navigator = createStackNavigator({
     UserList: {

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {PureComponent} from "react";
+import {PureComponent} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
-import {SegmentedControlContext} from "./SegmentedControl";
+import {SegmentedControlContext} from './SegmentedControl';
 
 export default class Tab extends PureComponent<ITab> {
     static contextType = SegmentedControlContext;

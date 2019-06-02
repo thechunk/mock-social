@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-describe('withNavigationParamsAsProps', () => {
+describe('injectToChildren', () => {
     it('wrapper renders correctly', () => {
         expect(true).toBe(false);
     });

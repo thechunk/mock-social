@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {PureComponent} from "react";
-import {SegmentedControlContext} from "./SegmentedControl";
+import {PureComponent} from 'react';
+import {SegmentedControlContext} from './SegmentedControl';
 
 export default class Content extends PureComponent<IContent> {
     render() {

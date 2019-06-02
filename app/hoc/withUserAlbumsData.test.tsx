@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {shallow} from "enzyme";
+import {shallow} from 'enzyme';
 
-describe('withUserPhotosData', () => {
+describe('withUserAlbumsData', () => {
     it('renders correctly', () => {
         expect(true).toEqual(false);
     });

@@ -1,4 +1,4 @@
-/// <reference path="./index.d.ts" />
+/// <reference path='./index.d.ts' />
 
 export {default as SegmentedControl} from './SegmentedControl';
 export {default as TabBar} from './TabBar';

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Children, Context, createContext, FunctionComponent, ReactElement, useState} from "react";
+import {Children, Context, createContext, FunctionComponent, ReactElement, useState} from 'react';
 import {View} from 'react-native';
 
 const TabBar = require('./TabBar').default;
