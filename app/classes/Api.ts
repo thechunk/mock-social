@@ -3,7 +3,8 @@ import Config from 'react-native-config';
 enum ApiPath {
     Users = '/users',
     Albums = '/albums',
-    Photos = '/photos'
+    Photos = '/photos',
+    Posts = '/posts'
 }
 enum ApiQueryParam {
     UserId = 'userId',
@@ -64,6 +65,18 @@ class PhotosApi implements IPhotosApi {
 }
 const Photos = new PhotosApi();
 
+class PostsApi implements IPostsApi {
+    public getAll() {
+        return apiRequest<Array<IPost>>(apiUrl(apiBaseUrl, ApiPath.Posts))()
+    }
+    public getAllByUserId(id: number) {
+        const query = `${ApiQueryParam.UserId}=${id}`;
+        return apiRequest<Array<IPost>>(apiUrl(apiBaseUrl, ApiPath.Posts, query))()
+    }
+}
+const Posts = new PostsApi();
+
 export {Users as UsersApi};
 export {Albums as AlbumsApi};
 export {Photos as PhotosApi};
+export {Posts as PostsApi};

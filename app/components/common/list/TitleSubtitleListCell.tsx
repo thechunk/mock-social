@@ -1,9 +1,9 @@
 import React, {PureComponent} from 'react';
 import {Text} from 'react-native';
-import ListCell from '../common/list/ListCell';
-import {inherited} from "./styles";
+import ListCell from './ListCell';
+import {inherited} from "../../user-list/styles";
 
-class UserListCell extends PureComponent<IUserListCell> {
+class TitleSubtitleListCell extends PureComponent<ITitleSubtitleListCell> {
     render() {
         return (
             <ListCell
@@ -20,4 +20,4 @@ class UserListCell extends PureComponent<IUserListCell> {
     }
 }
 
-export default UserListCell;
+export default TitleSubtitleListCell;

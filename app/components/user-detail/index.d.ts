@@ -6,4 +6,9 @@ interface IUserDetailAlbums {
     userId: number
 }
 
-interface IUserTabs {}
+interface IUserTabs {
+    user: IUser
+}
+
+interface IUserDetailPostsTab {
+}

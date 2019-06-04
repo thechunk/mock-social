@@ -5,8 +5,9 @@ const withUserData = <P extends IWithUserDataProps>(Component: ComponentType<P>)
     FC<HocOptional<P, IWithUserDataProps> & IWithUserDataOptionalProps> =>
     (props: HocOptional<P, IWithUserDataProps> & IWithUserDataOptionalProps) => {
         const [user, setUser] = useState<IUser | null>(null);
+        const [loading, setLoading] = useState<boolean>(true);
         useEffect(() => {
-            if (props.id) UsersApi.getById(props.id).then(setUser);
+            if (props.id) UsersApi.getById(props.id).then(setUser).then(() => setLoading(false));
         }, [props.id]);
 
         useEffect(() => {
@@ -14,7 +15,7 @@ const withUserData = <P extends IWithUserDataProps>(Component: ComponentType<P>)
         }, [props.hydrate]);
 
         return (
-            <Component {...props as P & IWithUserDataOptionalProps} user={user} />
+            <Component {...props as P & IWithUserDataOptionalProps} user={user} loading={loading} />
         );
     };
 

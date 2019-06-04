@@ -2,7 +2,7 @@ import * as React from 'react';
 import {PureComponent} from "react";
 import {FlatList, GestureResponderEvent} from "react-native";
 import withUserAlbumsData from "../../hoc/withUserAlbumsData";
-import AlbumListCell from "./AlbumListCell";
+import {ImageListCell} from "../common/list";
 import withNavigationParamsAsProps from "../../hoc/withNavigationParamsAsProps";
 import {NavigationInjectedProps} from "react-navigation";
 import styles, {inherited} from "./styles";
@@ -18,7 +18,7 @@ class AlbumList extends PureComponent<IAlbumList & NavigationInjectedProps & IWi
     render() {
         return (
             <FlatList data={this.props.albums} keyExtractor={v => v.id.toString()} renderItem={v => (
-                <AlbumListCell
+                <ImageListCell
                     key={v.index}
                     id={v.item.id}
                     title={v.item.title}

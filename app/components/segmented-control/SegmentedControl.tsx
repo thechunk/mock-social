@@ -1,14 +1,11 @@
 import * as React from 'react';
-import {Children, Context, createContext, FunctionComponent, ReactElement, useState} from 'react';
+import {Children, FunctionComponent, ReactElement, useState} from 'react';
 import {View} from 'react-native';
+import SegmentedControlContext from './SegmentedControlContext';
 
 const TabBar = require('./TabBar').default;
 const Content = require('./Content').default;
 
-const SegmentedControlContext: Context<ISegmentedControlContext> = createContext({
-    selectedTab: 0,
-    setSelectedTab: (id: number) => {}
-});
 
 const SegmentedControl: FunctionComponent<ISegmentedControl> = (props) => {
     const [selectedTab, setSelectedTab] = useState<number>(0);
@@ -31,5 +28,4 @@ const SegmentedControl: FunctionComponent<ISegmentedControl> = (props) => {
     )
 };
 
-export {SegmentedControlContext};
 export default SegmentedControl;

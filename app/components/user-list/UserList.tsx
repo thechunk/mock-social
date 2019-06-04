@@ -1,9 +1,10 @@
 import React, {PureComponent} from 'react';
-import UserListCell from './UserListCell';
+import {TitleSubtitleListCell} from '../common/list';
 import withUserListData from '../../hoc/withUserListData';
 import {FlatList, GestureResponderEvent} from 'react-native';
 import {NavigationScreenProps, withNavigation} from 'react-navigation';
-import styles, {inherited} from './styles';
+import {inherited} from './styles';
+import {Loader} from "../common/loader/index";
 
 class UserList extends PureComponent<IWithUserListDataProps & NavigationScreenProps> {
     navigateToDetail(user: IUser) {
@@ -14,9 +15,9 @@ class UserList extends PureComponent<IWithUserListDataProps & NavigationScreenPr
     }
 
     render() {
-        return (
+        return this.props.loading ? <Loader loading={this.props.loading} style={inherited.loader} /> : (
             <FlatList data={this.props.users} keyExtractor={v => v.id.toString()} renderItem={v => (
-                <UserListCell
+                <TitleSubtitleListCell
                     key={v.index}
                     title={v.item.username}
                     subtitle={v.item.name}

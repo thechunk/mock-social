@@ -18,5 +18,10 @@ export default StyleSheet.create({
     },
     subtitle: {
         fontSize: g.FontSize.ListCellSubtitle
+    },
+    loader: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });

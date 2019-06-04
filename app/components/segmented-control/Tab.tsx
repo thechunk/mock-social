@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {PureComponent} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
-import {SegmentedControlContext} from './SegmentedControl';
+import SegmentedControlContext from './SegmentedControlContext';
 
 export default class Tab extends PureComponent<ITab> {
     static contextType = SegmentedControlContext;
@@ -16,12 +16,16 @@ export default class Tab extends PureComponent<ITab> {
     }
 
     render() {
+        const active = this.context.selectedTab === this.props.id;
         return (
-            <View>
-                <TouchableOpacity onPress={this.onPress}>
-                    <Text>{this.context.selectedTab === this.props.id ? 'active: ' : ''}{this.props.title}</Text>
-                </TouchableOpacity>
-            </View>
+            <TouchableOpacity
+                onPress={this.onPress}
+                style={[this.props.inactiveStyle, active ? this.props.activeStyle : null]}>
+                <Text
+                    style={[this.props.inactiveTextStyle, active ? this.props.activeTextStyle : null]}>
+                    {this.props.title}
+                </Text>
+            </TouchableOpacity>
         );
     }
 }
