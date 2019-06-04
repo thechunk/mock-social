@@ -7,6 +7,7 @@ import UserDetailTabs from './UserDetailTabs';
 import {NavigationInjectedProps} from 'react-navigation';
 import PhotoHero from './PhotoHero';
 import styles from './styles';
+import UserDetailAlbums from "./UserDetailAlbums";
 
 export class UserDetail extends PureComponent<IWithUserDataProps & IWithUserDataOptionalProps &
     IWithNavigationParamsAsProps & NavigationInjectedProps> {
@@ -25,6 +26,10 @@ export class UserDetail extends PureComponent<IWithUserDataProps & IWithUserData
                                     <Text style={styles.subtitle}>at {this.props.user.company.name}</Text>
                                 </View>
                             </View>
+                            <View style={styles.callOutSection}>
+                                <Text style={styles.callOutSectionText}>{this.props.user.company.catchPhrase}</Text>
+                            </View>
+                            <UserDetailAlbums userId={this.props.user.id} />
                             <UserDetailTabs />
                         </>
                     )

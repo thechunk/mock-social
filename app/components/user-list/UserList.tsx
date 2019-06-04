@@ -3,7 +3,7 @@ import UserListCell from './UserListCell';
 import withUserListData from '../../hoc/withUserListData';
 import {FlatList, GestureResponderEvent} from 'react-native';
 import {NavigationScreenProps, withNavigation} from 'react-navigation';
-import styles from './styles';
+import styles, {inherited} from './styles';
 
 class UserList extends PureComponent<IWithUserListDataProps & NavigationScreenProps> {
     navigateToDetail(user: IUser) {
@@ -21,9 +21,9 @@ class UserList extends PureComponent<IWithUserListDataProps & NavigationScreenPr
                     title={v.item.username}
                     subtitle={v.item.name}
                     onPress={this.navigateToDetail(v.item)}
-                    cellStyle={styles.cell}
-                    titleStyle={styles.title}
-                    subtitleStyle={styles.subtitle} />
+                    cellStyle={[inherited.cell]}
+                    titleStyle={[inherited.title]}
+                    subtitleStyle={[inherited.subtitle]} />
             )} />
         )
     }

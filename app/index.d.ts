@@ -46,7 +46,8 @@ interface IPhoto {
     id: number,
     title: string,
     url: string,
-    thumbnailUrl: string
+    thumbnailUrl: string,
+    albumId: number
 }
 interface IPhotosApi {
     getAllByAlbumId(id: number): Promise<Array<IPhoto>>;
