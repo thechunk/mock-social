@@ -11,8 +11,13 @@ interface IContent {
 
 interface ITab {
     id: number,
-    title: string
+    title: string,
+    inactiveStyle?: import('react-native').StyleProp<import('react-native').ViewStyle>,
+    activeStyle?: import('react-native').StyleProp<import('react-native').ViewStyle>,
+    inactiveTextStyle?: import('react-native').StyleProp<import('react-native').TextStyle>,
+    activeTextStyle?: import('react-native').StyleProp<import('react-native').TextStyle>
 }
 
 interface ITabBar {
+    style?: import('react-native').StyleProp<import('react-native').ViewStyle>
 }

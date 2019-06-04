@@ -1,10 +1,10 @@
 import React, {PureComponent} from 'react';
 import {Image, Text, View} from 'react-native';
-import ListCell from '../common/list/ListCell';
-import WrappedWithPhotos from "../common/album-container/WrappedWithPhotos";
-import styles, {inherited} from "./styles";
+import ListCell from './ListCell';
+import WrappedWithPhotos from "../album-container/WrappedWithPhotos";
+import styles, {inherited} from "../../album-list/styles";
 
-class AlbumListCell extends PureComponent<IAlbumListCell> {
+class ImageListCell extends PureComponent<IImageListCell> {
     render() {
         return (
             <ListCell
@@ -26,4 +26,4 @@ class AlbumListCell extends PureComponent<IAlbumListCell> {
     }
 }
 
-export default AlbumListCell;
+export default ImageListCell;

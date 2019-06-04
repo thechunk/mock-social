@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
 import * as g from '../../styles/global';
 
+export {default as inherited} from '../common/list/styles';
 export default StyleSheet.create({
     container: {
-        flex: 1,
         flexDirection: 'column',
         alignItems: 'stretch'
     },
@@ -61,12 +61,40 @@ export default StyleSheet.create({
         paddingLeft: 8,
     },
     callOutSection: {
-        backgroundColor: 'rgba(0, 100, 100, 1.0)',
-        padding: g.Dimensions.LeftOffset
+        backgroundColor: g.Color.PrimaryAccent,
+        padding: g.Dimensions.LeftOffset,
+        minHeight: g.Dimensions.CellHeight
     },
     callOutSectionText: {
         fontSize: g.FontSize.MainSubtitle,
         fontStyle: 'italic',
         color: g.Color.White
+    },
+
+    tabBar: {
+        flexDirection: 'row',
+        flexWrap: 'nowrap'
+    },
+    tab: {
+        flex: 1,
+        height: g.Dimensions.CellHeight,
+        backgroundColor: g.Color.SecondaryAccent,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    tabLeftBorder: {
+        borderLeftColor: g.Color.White,
+        borderLeftWidth: 0.5
+    },
+    tabActive: {
+        backgroundColor: g.Color.PrimaryAccent
+    },
+    tabTextActive: {
+        fontWeight: 'bold',
+        color: g.Color.White
+    },
+
+    postCell: {
+        padding: g.Dimensions.LeftOffset
     }
 });

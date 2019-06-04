@@ -53,13 +53,24 @@ interface IPhotosApi {
     getAllByAlbumId(id: number): Promise<Array<IPhoto>>;
 }
 
+interface IPost {
+    userId: number,
+    id: number,
+    title: string,
+    body: string
+}
+interface IPostsApi {
+    getAll(): Promise<Array<IPost>>;
+    getAllByUserId(id: number): Promise<Array<IPost>>;
+}
+
 // HOCs
 type HocOptional<P, I> = Pick<P, Exclude<keyof P, keyof I>>;
 
 interface IWithNavigationParamsAsProps {
 }
 
-interface IWithUserDataProps {
+interface IWithUserDataProps extends IWithLoadableProps {
     user: IUser | null
 }
 interface IWithUserDataOptionalProps {
@@ -67,21 +78,31 @@ interface IWithUserDataOptionalProps {
     id?: number
 }
 
-interface IWithUserListDataProps {
+interface IWithLoadableProps {
+    loading: boolean
+}
+interface IWithUserListDataProps extends IWithLoadableProps {
     users: Array<IUser>
 }
 
-interface IWithUserAlbumsDataProps {
+interface IWithUserAlbumsDataProps extends IWithLoadableProps {
     albums: Array<IAlbum>
 }
 interface IWithUserAlbumsDataOptionalProps {
     id?: number
 }
 
-interface IWithUserPhotosDataProps {
+interface IWithUserPhotosDataProps extends IWithLoadableProps {
     photos: Array<IPhoto>
 }
 interface IWithUserPhotosDataOptionalProps {
+    id?: number
+}
+
+interface IWithPostsDataProps extends IWithLoadableProps {
+    posts: Array<IPost>
+}
+interface IWithPostsDataOptionalProps {
     id?: number
 }
 
