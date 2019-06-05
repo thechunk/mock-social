@@ -8,7 +8,7 @@ import styles, {inherited} from "./styles";
 class UserDetailPostsTab extends PureComponent<IUserDetailPostsTab & IWithPostsDataProps & IWithPostsDataOptionalProps> {
     render() {
         return (
-            <View>
+            <View style={styles.postTabContainer}>
                 {this.props.posts.map(v => (
                     <TitleSubtitleListCell
                         key={v.id}

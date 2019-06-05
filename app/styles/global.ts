@@ -4,27 +4,47 @@ export enum Color {
     Separator = 'rgba(0, 0, 0, 0.2)',
     White = '#fff',
     Black = '#000',
-    PrimaryAccent = 'rgba(0, 100, 100, 1.0)',
-    SecondaryAccent = 'rgba(0, 200, 200, 1.0)'
+    PrimaryAccent = '#5e7dc2',
+    SecondaryAccent = '#d5a419',
+    Background = '#e6f0ff'
 }
 export enum FontSize {
     ListCellTitle = 16,
     ListCellSubtitle = 12,
-    MainTitle = 24,
-    MainSubtitle = 18,
+    MainTitle = 16,
+    MainSubtitle = 14,
     SquareCellCallout = 24,
     SquareCellSubtitle = 12
 }
 export enum Dimensions {
     SeparatorWidth = PixelRatio.roundToNearestPixel(0.5),
-    LeftOffset = 12,
+    Offset = 12,
     CellHeight = 48,
-    ElementsHorizontalPadding = 8
+    ElementsHorizontalPadding = 8,
+    InnerLargePadding = 24,
+    BorderRadius = 12
 }
 
 export default StyleSheet.create({
     flex1: {flex: 1},
     flexRow: {flex: 1, flexDirection: 'row'},
     flexColumn: {flex: 1, flexDirection: 'column'},
-    generalPadding: {padding: Dimensions.LeftOffset}
+    generalPadding: {padding: Dimensions.Offset},
+    containerShadow: {
+        shadowOffset: {width: 0, height: 6},
+        shadowColor: Color.Black,
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
+        elevation: 5
+    },
+    viewBackground: {
+        backgroundColor: Color.Background
+    },
+    roundedBorder: {
+        borderTopLeftRadius: Dimensions.BorderRadius,
+        borderTopRightRadius: Dimensions.BorderRadius,
+        borderBottomLeftRadius: Dimensions.BorderRadius,
+        borderBottomRightRadius: Dimensions.BorderRadius,
+        overflow: 'hidden'
+    }
 })

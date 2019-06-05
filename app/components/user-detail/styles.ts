@@ -7,11 +7,32 @@ export default StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'stretch'
     },
-    photoHero: {
-        height: 240
+    photoNameView: {
+        flexDirection: 'row',
+        paddingBottom: g.Dimensions.Offset
     },
+    photoHero: {
+        height: 180,
+    },
+    photoHeroContainer: {
+        flex: 1,
+        margin: g.Dimensions.Offset,
+    },
+    nameOverlay: {
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        height: 180,
+        marginRight: g.Dimensions.Offset
+    },
+
     userAlbumsContainer: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginLeft: g.Dimensions.Offset,
+        marginRight: g.Dimensions.Offset,
+        marginBottom: g.Dimensions.Offset
     },
     userAlbumsMore: {
         flex: 1,
@@ -20,7 +41,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         position: 'absolute',
         right: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.4)'
+        backgroundColor: 'rgba(0, 0, 0, 0.3)'
     },
     userAlbumsMoreCount: {
         color: g.Color.White,
@@ -34,67 +55,72 @@ export default StyleSheet.create({
         textShadowColor: g.Color.Black,
         fontSize: g.FontSize.SquareCellSubtitle
     },
-    nameOverlay: {
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        position: 'absolute',
-        height: 240,
-        marginLeft: g.Dimensions.LeftOffset
-    },
     title: {
         fontWeight: 'bold',
         fontSize: g.FontSize.MainTitle,
-        color: g.Color.White,
+        color: g.Color.Black,
     },
     subtitle: {
         fontSize: g.FontSize.MainSubtitle,
-        color: g.Color.White,
+        color: g.Color.Black,
     },
-    textContainer: {
-        backgroundColor: 'rgba(0, 0, 0, 0.4)',
-        margin: 1,
-        paddingTop: 4,
-        paddingRight: 8,
-        paddingBottom: 4,
-        paddingLeft: 8,
-    },
+
     callOutSection: {
-        backgroundColor: g.Color.PrimaryAccent,
-        padding: g.Dimensions.LeftOffset,
-        minHeight: g.Dimensions.CellHeight
+        backgroundColor: g.Color.White,
+        padding: g.Dimensions.InnerLargePadding,
+        marginLeft: g.Dimensions.Offset,
+        marginRight: g.Dimensions.Offset,
+        marginBottom: g.Dimensions.Offset
     },
     callOutSectionText: {
         fontSize: g.FontSize.MainSubtitle,
-        fontStyle: 'italic',
-        color: g.Color.White
+        color: g.Color.Black
     },
 
     tabBar: {
         flexDirection: 'row',
-        flexWrap: 'nowrap'
+        flexWrap: 'nowrap',
+        paddingLeft: g.Dimensions.Offset,
+        paddingRight: g.Dimensions.Offset,
     },
     tab: {
         flex: 1,
         height: g.Dimensions.CellHeight,
         backgroundColor: g.Color.SecondaryAccent,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        borderTopLeftRadius: g.Dimensions.CellHeight / 2,
+        borderTopRightRadius: g.Dimensions.CellHeight / 2,
+        borderBottomLeftRadius: g.Dimensions.CellHeight / 2,
+        borderBottomRightRadius: g.Dimensions.CellHeight / 2,
+        borderWidth: 2,
+        borderColor: 'transparent',
     },
     tabLeftBorder: {
-        borderLeftColor: g.Color.White,
-        borderLeftWidth: 0.5
+        marginLeft: g.Dimensions.Offset
     },
     tabActive: {
-        backgroundColor: g.Color.PrimaryAccent
+        borderColor: 'rgba(255, 255, 255, 0.3)'
+    },
+    tabTextInactive: {
+        color: g.Color.White
     },
     tabTextActive: {
-        fontWeight: 'bold',
-        color: g.Color.White
+        fontWeight: 'bold'
     },
 
     postCell: {
-        padding: g.Dimensions.LeftOffset
+        padding: g.Dimensions.Offset,
+        backgroundColor: g.Color.White
+    },
+    postTabContainer: {
+        marginTop: g.Dimensions.Offset,
+        borderTopColor: g.Color.Separator,
+        borderTopWidth: g.Dimensions.SeparatorWidth
+    },
+
+    sectionHeaderText: {
+        margin: g.Dimensions.Offset,
+        fontWeight: 'bold'
     }
 });
