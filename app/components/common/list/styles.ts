@@ -7,7 +7,7 @@ export default StyleSheet.create({
         alignContent: 'center',
         justifyContent: 'center',
         minHeight: g.Dimensions.CellHeight,
-        paddingLeft: g.Dimensions.LeftOffset,
+        paddingLeft: g.Dimensions.Offset,
     },
     cellOuter: {
         borderBottomColor: g.Color.Separator,

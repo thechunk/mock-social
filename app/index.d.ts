@@ -64,6 +64,17 @@ interface IPostsApi {
     getAllByUserId(id: number): Promise<Array<IPost>>;
 }
 
+interface IComment {
+    postId: number,
+    id: number,
+    title: string,
+    body: string
+}
+interface IPostsApi {
+    getAll(): Promise<Array<IPost>>;
+    getAllByUserId(id: number): Promise<Array<IPost>>;
+}
+
 // HOCs
 type HocOptional<P, I> = Pick<P, Exclude<keyof P, keyof I>>;
 
@@ -103,6 +114,20 @@ interface IWithPostsDataProps extends IWithLoadableProps {
     posts: Array<IPost>
 }
 interface IWithPostsDataOptionalProps {
+    id?: number
+}
+
+interface IWithCommentsDataProps extends IWithLoadableProps {
+    comments: Array<IComment>
+}
+interface IWithCommentsDataOptionalProps {
+    id?: number
+}
+
+interface IWithTodosDataProps extends IWithLoadableProps {
+    comments: Array<ITodo>
+}
+interface IWithTodosDataOptionalProps {
     id?: number
 }
 
