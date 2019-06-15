@@ -119,6 +119,17 @@ export default StyleSheet.create({
         borderTopWidth: g.Dimensions.SeparatorWidth
     },
 
+    todoCell: {
+        padding: g.Dimensions.Offset,
+        backgroundColor: g.Color.White,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
+    todoTitle: {
+        marginLeft: g.Dimensions.Offset
+    },
+
     sectionHeaderText: {
         margin: g.Dimensions.Offset,
         fontWeight: 'bold'

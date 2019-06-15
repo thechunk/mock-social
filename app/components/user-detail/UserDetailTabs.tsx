@@ -5,6 +5,7 @@ import {SegmentedControl, TabBar, Tab, Content} from '../segmented-control';
 import styles from './styles';
 import g, {Color} from '../../styles/global';
 import UserDetailPostsTab from "./UserDetailPostsTab";
+import UserDetailTodosTab from "./UserDetailTodosTab";
 
 export default class UserDetailTabs extends PureComponent<IUserTabs> {
     render() {
@@ -31,6 +32,7 @@ export default class UserDetailTabs extends PureComponent<IUserTabs> {
                         <UserDetailPostsTab id={this.props.user.id} />
                     </Content>
                     <Content id={1}>
+                        <UserDetailTodosTab id={this.props.user.id} />
                     </Content>
                 </SegmentedControl>
             </>

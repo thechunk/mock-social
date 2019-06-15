@@ -4,11 +4,11 @@ import {CommentsApi} from '../classes/Api';
 const withCommentsData = <P extends IWithCommentsDataProps>(Component: ComponentType<P>):
     FC<HocOptional<P, IWithCommentsDataProps> & IWithCommentsDataOptionalProps> =>
     (props: HocOptional<P, IWithCommentsDataProps> & IWithCommentsDataOptionalProps) => {
-        const [comments, setComments] = useState<Array<IPost>>([]);
+        const [comments, setComments] = useState<Array<IComment>>([]);
         const [loading, setLoading] = useState<boolean>(true);
         useEffect(() => {
             if (props.id) {
-                CommentsApi.getAllByUserId(props.id).then(setComments).then(() => setLoading(false));
+                CommentsApi.getAllByPostId(props.id).then(setComments).then(() => setLoading(false));
             }
         }, [props.id]);
 

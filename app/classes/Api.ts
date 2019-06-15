@@ -4,11 +4,14 @@ enum ApiPath {
     Users = '/users',
     Albums = '/albums',
     Photos = '/photos',
-    Posts = '/posts'
+    Posts = '/posts',
+    Comments = '/comments',
+    Todos = '/todos'
 }
 enum ApiQueryParam {
     UserId = 'userId',
-    AlbumId = 'albumId'
+    AlbumId = 'albumId',
+    PostId = 'postId'
 }
 enum HttpMethod {
     Get = 'GET',
@@ -76,7 +79,31 @@ class PostsApi implements IPostsApi {
 }
 const Posts = new PostsApi();
 
+class CommentsApi implements ICommentsApi {
+    public getAll() {
+        return apiRequest<Array<IComment>>(apiUrl(apiBaseUrl, ApiPath.Comments))()
+    }
+    public getAllByPostId(id: number) {
+        const query = `${ApiQueryParam.PostId}=${id}`;
+        return apiRequest<Array<IComment>>(apiUrl(apiBaseUrl, ApiPath.Comments, query))()
+    }
+}
+const Comments = new CommentsApi();
+
+class TodosApi implements ITodosApi {
+    public getAll() {
+        return apiRequest<Array<ITodo>>(apiUrl(apiBaseUrl, ApiPath.Todos))()
+    }
+    public getAllByUserId(id: number) {
+        const query = `${ApiQueryParam.UserId}=${id}`;
+        return apiRequest<Array<ITodo>>(apiUrl(apiBaseUrl, ApiPath.Todos, query))()
+    }
+}
+const Todos = new TodosApi();
+
 export {Users as UsersApi};
 export {Albums as AlbumsApi};
 export {Photos as PhotosApi};
 export {Posts as PostsApi};
+export {Comments as CommentsApi};
+export {Todos as TodosApi};
