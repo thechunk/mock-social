@@ -13,5 +13,5 @@ interface IUserTabs {
 interface IUserDetailPostsTab {
 }
 
-interface IUserDetailCommentsTab {
+interface IUserDetailTodosTab {
 }

@@ -70,9 +70,20 @@ interface IComment {
     title: string,
     body: string
 }
-interface IPostsApi {
-    getAll(): Promise<Array<IPost>>;
-    getAllByUserId(id: number): Promise<Array<IPost>>;
+interface ICommentsApi {
+    getAll(): Promise<Array<IComment>>;
+    getAllByPostId(id: number): Promise<Array<IComment>>;
+}
+
+interface ITodo {
+    userId: number,
+    id: number,
+    title: string,
+    completed: boolean
+}
+interface ITodosApi {
+    getAll(): Promise<Array<ITodo>>;
+    getAllByUserId(id: number): Promise<Array<ITodo>>;
 }
 
 // HOCs
@@ -125,7 +136,7 @@ interface IWithCommentsDataOptionalProps {
 }
 
 interface IWithTodosDataProps extends IWithLoadableProps {
-    comments: Array<ITodo>
+    todos: Array<ITodo>
 }
 interface IWithTodosDataOptionalProps {
     id?: number
