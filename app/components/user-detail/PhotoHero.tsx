@@ -14,6 +14,7 @@ export default class PhotoHero extends PureComponent<IPhotoHero> {
                 renderItem={v => <LoadedImage
                     style={styles.photoHero}
                     source={{uri: v.url}}
+                    showSpinner={true}
                     defaultSource={{uri: BlankImageUri}} />} />
         )
     }

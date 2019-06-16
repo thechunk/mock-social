@@ -12,6 +12,7 @@ export default class TouchableImage extends PureComponent<ImageProps & Touchable
                 <LoadedImage
                     {...this.props as ImageProps}
                     style={styles.image}
+                    showSpinner={true}
                     defaultSource={{uri: BlankImageUri}} />
             </TouchableOpacity>
         )

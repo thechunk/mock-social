@@ -1,6 +1,5 @@
-import {StatusBar, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import * as g from '../../styles/global';
-import {Header} from "react-navigation";
 
 export {default as inherited} from '../common/list/styles';
 export default StyleSheet.create({
@@ -118,18 +117,6 @@ export default StyleSheet.create({
         marginTop: g.Dimensions.Offset,
         borderTopColor: g.Color.Separator,
         borderTopWidth: g.Dimensions.SeparatorWidth
-    },
-
-    todoCell: {
-        padding: g.Dimensions.Offset,
-        backgroundColor: g.Color.White,
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'center'
-    },
-    todoTitle: {
-        marginLeft: g.Dimensions.Offset,
-        flex: 1
     },
 
     sectionHeaderText: {

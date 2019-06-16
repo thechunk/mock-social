@@ -14,7 +14,7 @@ class ImageListCell extends PureComponent<IImageListCell> {
                 cellStyle={this.props.cellStyle}>
                 <WrappedWithPhotos
                     id={this.props.id}
-                    renderItem={(v, _) => <LoadedImage style={this.props.imageStyle} source={{uri: v.url}} />} />
+                    renderItem={v => <LoadedImage style={this.props.imageStyle} source={{uri: v.url}} />} />
                 <View style={styles.cellTextView}>
                     <Text style={this.props.titleStyle}>{this.props.title}</Text>
                     {this.props.subtitle && this.props.subtitle.length > 0

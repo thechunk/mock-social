@@ -1,14 +1,12 @@
 import * as React from 'react';
 import {PureComponent} from "react";
-import {Animated, Image, ImageProps, View} from "react-native";
+import {ActivityIndicator, Animated, Image, ImageProps} from "react-native";
+import styles from './styles';
 
-interface ILoadedImageState {
-    opacity: Animated.Value
-}
-export default class LoadedImage extends PureComponent<ImageProps, ILoadedImageState> {
+export default class LoadedImage extends PureComponent<ImageProps & ILoadedImage, ILoadedImageState> {
     constructor(props: ImageProps) {
         super(props);
-        this.state = {opacity: new Animated.Value(0)};
+        this.state = {opacity: new Animated.Value(0), loading: true};
         this.onImageLoaded = this.onImageLoaded.bind(this);
     }
 
@@ -16,14 +14,19 @@ export default class LoadedImage extends PureComponent<ImageProps, ILoadedImageS
         Animated.timing(this.state.opacity, {
             toValue: 1,
             duration: 200
-        }).start();
+        }).start(() => this.setState(state => ({...state, loading: false})));
     }
 
     render() {
         return (
-            <Animated.View style={[this.props.style, {opacity: this.state.opacity}]}>
-                <Image {...this.props as ImageProps} onLoadEnd={this.onImageLoaded} />
-            </Animated.View>
+            <>
+                {this.state.loading && this.props.showSpinner
+                    ? <ActivityIndicator size="small" style={[this.props.style, styles.imageLoader]} />
+                    : null}
+                <Animated.View style={[this.props.style, {opacity: this.state.opacity}]}>
+                    <Image {...this.props as ImageProps} onLoadEnd={this.onImageLoaded}/>
+                </Animated.View>
+        </>
         );
     }
 }

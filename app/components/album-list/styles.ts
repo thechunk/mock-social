@@ -11,12 +11,12 @@ export default StyleSheet.create({
     },
     cellTextView: {
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginLeft: g.Dimensions.ElementsHorizontalPadding
     },
     image: {
         flex: 0,
         width: g.Dimensions.CellHeight,
-        height: g.Dimensions.CellHeight,
-        marginRight: g.Dimensions.ElementsHorizontalPadding
+        height: g.Dimensions.CellHeight
     }
 });

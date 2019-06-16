@@ -3,7 +3,7 @@ import {PureComponent} from "react";
 import withTodosData from "../../hoc/withTodosData";
 import {TitleSubtitleListCell} from "../common/list/index";
 import {View} from "react-native";
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons';
 import styles, {inherited} from "./styles";
 
 class UserDetailTodosTab extends PureComponent<IUserDetailTodosTab & IWithTodosDataProps & IWithTodosDataOptionalProps> {
@@ -14,13 +14,13 @@ class UserDetailTodosTab extends PureComponent<IUserDetailTodosTab & IWithTodosD
                     <TitleSubtitleListCell
                         key={v.id}
                         title={v.title}
-                        accessory={() => (
+                        leftAccessory={() => (
                             <Icon
                                 name={v.completed ? "ios-checkmark-circle-outline" : "ios-radio-button-off"}
                                 size={30} />
                         )}
-                        cellStyle={[inherited.cell, styles.todoCell]}
-                        titleStyle={[inherited.title, styles.todoTitle]}
+                        cellStyle={[inherited.cell]}
+                        titleStyle={[inherited.title]}
                         subtitleStyle={inherited.subtitle} />
                 ))}
             </View>

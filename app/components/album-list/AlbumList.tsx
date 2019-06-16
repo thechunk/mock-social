@@ -25,8 +25,8 @@ class AlbumList extends PureComponent<IAlbumList & NavigationInjectedProps & IWi
                     title={v.item.title}
                     cellStyle={[inherited.cell, styles.cell]}
                     imageStyle={styles.image}
-                    titleStyle={[inherited.title]}
-                    subtitleStyle={[inherited.subtitle]}
+                    titleStyle={inherited.title}
+                    subtitleStyle={inherited.subtitle}
                     onPress={this.navigateToPhotoGrid(v.item)} />
             )} />
         );

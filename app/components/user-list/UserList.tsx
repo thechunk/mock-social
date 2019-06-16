@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import {TitleSubtitleListCell} from '../common/list';
 import withUserListData from '../../hoc/withUserListData';
 import {FlatList, GestureResponderEvent} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {NavigationScreenProps, withNavigation} from 'react-navigation';
 import {inherited} from './styles';
 import {Loader} from "../common/loader/index";
@@ -21,6 +22,9 @@ class UserList extends PureComponent<IWithUserListDataProps & NavigationScreenPr
                     key={v.index}
                     title={v.item.username}
                     subtitle={v.item.name}
+                    rightAccessory={() => (
+                        <Icon name="ios-arrow-dropright" size={30} />
+                    )}
                     onPress={this.navigateToDetail(v.item)}
                     cellStyle={[inherited.cell]}
                     titleStyle={[inherited.title]}

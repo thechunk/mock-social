@@ -20,7 +20,8 @@ interface ITitleSubtitleListCell {
     key: number,
     title: string,
     subtitle?: string,
-    accessory?: () => JSX.Element,
+    leftAccessory?: () => JSX.Element,
+    rightAccessory?: () => JSX.Element,
     onPress?: (event: import('react-native').GestureResponderEvent) => void,
     cellStyle?: import('react-native').StyleProp<import('react-native').ViewStyle>,
     titleStyle?: import('react-native').StyleProp<import('react-native').TextStyle>

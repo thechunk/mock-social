@@ -4,10 +4,13 @@ import * as g from '../../../styles/global';
 export default StyleSheet.create({
     cell: {
         flex: 1,
-        alignContent: 'center',
-        justifyContent: 'center',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
         minHeight: g.Dimensions.CellHeight,
         paddingLeft: g.Dimensions.Offset,
+        paddingRight: g.Dimensions.Offset,
+        backgroundColor: g.Color.White
     },
     cellOuter: {
         borderBottomColor: g.Color.Separator,
@@ -23,5 +26,12 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+
+    leftAccessory: {
+        marginRight: g.Dimensions.Offset
+    },
+    rightAccessory: {
+        marginLeft: g.Dimensions.Offset
     }
 });

@@ -34,6 +34,7 @@ class PhotoGrid extends PureComponent<IPhotoGrid & NavigationInjectedProps & IWi
                 keyExtractor={v => v.id.toString()}
                 contentContainerStyle={g.scrollViewHeaderOffset}
                 scrollIndicatorInsets={Insets.ScrollViewWithFloatingHeader}
+                maxToRenderPerBatch={3}
                 renderItem={v => (
                     <PhotoGridCell
                         onPress={this.onCellPress(v.item)}
