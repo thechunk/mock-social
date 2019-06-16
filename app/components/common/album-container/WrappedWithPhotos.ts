@@ -8,7 +8,7 @@ class PhotoData extends PureComponent<IPhotoData & IWithUserPhotosDataProps> {
 
     render() {
         const displayPhoto = PhotoData.displayPhoto(this.props.photos);
-        return displayPhoto ? this.props.renderItem(displayPhoto) : null;
+        return displayPhoto ? this.props.renderItem(displayPhoto, this.props.album) : null;
     }
 }
 

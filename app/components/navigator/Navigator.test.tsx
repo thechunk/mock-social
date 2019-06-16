@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Navigator from './Navigator';
+import Navigator from './';
 
 import {shallow} from 'enzyme';
 

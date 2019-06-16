@@ -19,27 +19,27 @@ const UserDetailAlbums: FC<IUserDetailAlbums & NavigationScreenProps> =
         const [albums, setAlbums] = useState<Array<IAlbum>>([]);
         const withAlbums = (albums: Array<IAlbum>) => {
             setAlbums(albums);
-        }
+        };
 
-        const onTapAlbum = (id: number) => (event: GestureResponderEvent) => {
-            props.navigation.navigate('PhotoGrid', {id});
-        }
+        const onTapAlbum = (id: number, album: IAlbum) => (event: GestureResponderEvent) => {
+            props.navigation.navigate('PhotoGrid', {id, hydrate: album});
+        };
         const onTapMore = (id: number) => (event: GestureResponderEvent) => {
             props.navigation.navigate('AlbumList', {id});
-        }
+        };
 
         return (
-            <View style={styles.userAlbumsContainer}>
+            <View style={[styles.userAlbumsContainer, {height: imageWidth}]}>
                 <AlbumContainer
                     userId={props.userId}
                     limit={limit}
                     withAlbums={withAlbums}
-                    renderItem={v => (
+                    renderItem={(photo: IPhoto, album: IAlbum)=> (
                         <TouchableImage
-                            key={v.id}
+                            key={photo.id}
                             style={[g.default.roundedBorder, {width: imageWidth, height: imageWidth}]}
-                            onPress={onTapAlbum(v.albumId)}
-                            source={{uri: v.url}}/>
+                            onPress={onTapAlbum(photo.albumId, album)}
+                            source={{uri: photo.url}}/>
                     )} />
                 {albums.length > limit
                     ? (
@@ -49,12 +49,8 @@ const UserDetailAlbums: FC<IUserDetailAlbums & NavigationScreenProps> =
                             style={[styles.userAlbumsMore, g.default.roundedBorder, {width: imageWidth, height: imageWidth}]}
                             onPress={onTapMore(props.userId)}>
                             <>
-                                <Text style={styles.userAlbumsMoreCount}>
-                                    {albums.length - limit + 1}
-                                </Text>
-                                <Text style={styles.userAlbumsMoreText}>
-                                    more&hellip;
-                                </Text>
+                                <Text style={styles.userAlbumsMoreCount}>{albums.length - limit + 1}</Text>
+                                <Text style={styles.userAlbumsMoreText}>more&hellip;</Text>
                             </>
                         </TouchableHighlight>
                     )

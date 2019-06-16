@@ -1,4 +1,5 @@
 import {PixelRatio, StyleSheet} from "react-native";
+import {Header} from "react-navigation";
 
 export enum Color {
     Separator = 'rgba(0, 0, 0, 0.2)',
@@ -22,8 +23,12 @@ export enum Dimensions {
     CellHeight = 48,
     ElementsHorizontalPadding = 8,
     InnerLargePadding = 24,
-    BorderRadius = 12
+    BorderRadius = 12,
 }
+
+export const Insets = {
+    ScrollViewWithFloatingHeader: {top: Header.HEIGHT + 25, bottom: 25}
+};
 
 export default StyleSheet.create({
     flex1: {flex: 1},
@@ -46,5 +51,9 @@ export default StyleSheet.create({
         borderBottomLeftRadius: Dimensions.BorderRadius,
         borderBottomRightRadius: Dimensions.BorderRadius,
         overflow: 'hidden'
+    },
+    scrollViewHeaderOffset: {
+        paddingTop: Header.HEIGHT + 25,
+        paddingBottom: 25
     }
 })

@@ -118,6 +118,7 @@ interface IWithUserPhotosDataProps extends IWithLoadableProps {
     photos: Array<IPhoto>
 }
 interface IWithUserPhotosDataOptionalProps {
+    hydrate?: IAlbum,
     id?: number
 }
 

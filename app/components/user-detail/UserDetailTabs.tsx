@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {PureComponent} from 'react';
-import {Text, TouchableWithoutFeedback, View} from 'react-native';
 import {SegmentedControl, TabBar, Tab, Content} from '../segmented-control';
 import styles from './styles';
 import g, {Color} from '../../styles/global';

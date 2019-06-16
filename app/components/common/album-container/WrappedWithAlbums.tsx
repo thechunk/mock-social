@@ -16,7 +16,7 @@ class AlbumData extends PureComponent<IAlbumData & IWithUserAlbumsDataProps> {
     render() {
         const displayAlbum = this.displayAlbums(this.props.albums);
         return this.props.renderItem ? displayAlbum.map(v => (
-            <WrappedWithPhotos key={v.id} id={v.id} renderItem={this.props.renderItem} />
+            <WrappedWithPhotos key={v.id} id={v.id} album={v} renderItem={this.props.renderItem} />
         )) : null;
     }
 }

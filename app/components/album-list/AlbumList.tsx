@@ -11,7 +11,8 @@ class AlbumList extends PureComponent<IAlbumList & NavigationInjectedProps & IWi
     IWithUserAlbumsDataOptionalProps> {
     navigateToPhotoGrid(album: IAlbum) {
         return (event: GestureResponderEvent) => {
-            this.props.navigation.navigate('PhotoGrid', { id: album.id } as IPhotoGrid)
+            this.props.navigation.navigate('PhotoGrid',
+                { hydrate: album, id: album.id } as IWithUserPhotosDataOptionalProps)
         }
     }
 

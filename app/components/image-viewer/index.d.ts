@@ -1,0 +1,3 @@
+interface IImageViewerScreen {
+    hydrate: IPhoto
+}

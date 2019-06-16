@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import * as g from '../../styles/global';
+import {Header} from "react-navigation";
 
 export {default as inherited} from '../common/list/styles';
 export default StyleSheet.create({
@@ -127,7 +128,8 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     todoTitle: {
-        marginLeft: g.Dimensions.Offset
+        marginLeft: g.Dimensions.Offset,
+        flex: 1
     },
 
     sectionHeaderText: {

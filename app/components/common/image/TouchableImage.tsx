@@ -7,7 +7,10 @@ export default class TouchableImage extends PureComponent<ImageProps & Touchable
     render() {
         return (
             <TouchableOpacity {...this.props as TouchableOpacityProps} style={this.props.style}>
-                <Image {...this.props as ImageProps} style={styles.image} />
+                <Image
+                    {...this.props as ImageProps}
+                    style={styles.image}
+                    defaultSource={{uri: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}} />
             </TouchableOpacity>
         )
     }

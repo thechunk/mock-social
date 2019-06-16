@@ -10,13 +10,16 @@ import styles from './styles';
 import UserDetailAlbums from "./UserDetailAlbums";
 import {Loader} from "../common/loader/index";
 import {inherited} from "../user-list/styles";
-import {default as g} from '../../styles/global';
+import {default as g, Insets} from '../../styles/global';
 
 export class UserDetail extends PureComponent<IWithUserDataProps & IWithUserDataOptionalProps &
     IWithNavigationParamsAsProps & NavigationInjectedProps> {
     render() {
         return this.props.loading ? <Loader loading={this.props.loading} style={inherited.loader} /> : (
-            <ScrollView contentContainerStyle={styles.container} style={g.viewBackground}>
+            <ScrollView
+                contentContainerStyle={[styles.container, g.scrollViewHeaderOffset]}
+                scrollIndicatorInsets={Insets.ScrollViewWithFloatingHeader}
+                style={g.viewBackground}>
                 {this.props.user
                     ? (
                         <>

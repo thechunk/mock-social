@@ -1,6 +1,6 @@
 /// <reference path='./index.d.ts' />
 
-import Navigator from './components/Navigator';
+import {Navigator} from './components/navigator';
 import {createAppContainer} from 'react-navigation';
 
 const App = createAppContainer(Navigator);

@@ -8,7 +8,7 @@ import {NavigationInjectedProps, withNavigation} from 'react-navigation';
  */
 type WrappedComponentProps = IWithNavigationParamsAsProps & NavigationInjectedProps;
 const withNavigationParamsAsProps = <P extends WrappedComponentProps>(Component: ComponentType<P>):
-    FC<WrappedComponentProps> =>
+    FC<P> =>
     (props: WrappedComponentProps) => {
         const Wrapped = withNavigation(Component);
         return <Wrapped {...props as P} {...props.navigation.state.params as P} />;
