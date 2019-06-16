@@ -1,16 +1,18 @@
 import * as React from 'react';
 import {PureComponent} from "react";
-import {Image, ImageProps, TouchableOpacity, TouchableOpacityProps} from "react-native";
+import {ImageProps, TouchableOpacity, TouchableOpacityProps} from "react-native";
 import styles from './styles';
+import {BlankImageUri} from "../../../styles/global";
+import LoadedImage from "./LoadedImage";
 
 export default class TouchableImage extends PureComponent<ImageProps & TouchableOpacityProps> {
     render() {
         return (
             <TouchableOpacity {...this.props as TouchableOpacityProps} style={this.props.style}>
-                <Image
+                <LoadedImage
                     {...this.props as ImageProps}
                     style={styles.image}
-                    defaultSource={{uri: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}} />
+                    defaultSource={{uri: BlankImageUri}} />
             </TouchableOpacity>
         )
     }

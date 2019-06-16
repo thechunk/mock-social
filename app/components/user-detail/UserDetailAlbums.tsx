@@ -6,6 +6,7 @@ import styles from './styles';
 import TouchableImage from "../common/image/TouchableImage";
 import {NavigationScreenProps, withNavigation} from "react-navigation";
 import * as g from '../../styles/global';
+import {BlankImageUri} from "../../styles/global";
 
 const {width} = Dimensions.get('window');
 
@@ -39,7 +40,8 @@ const UserDetailAlbums: FC<IUserDetailAlbums & NavigationScreenProps> =
                             key={photo.id}
                             style={[g.default.roundedBorder, {width: imageWidth, height: imageWidth}]}
                             onPress={onTapAlbum(photo.albumId, album)}
-                            source={{uri: photo.url}}/>
+                            source={{uri: photo.url}}
+                            defaultSource={{uri: BlankImageUri}} />
                     )} />
                 {albums.length > limit
                     ? (

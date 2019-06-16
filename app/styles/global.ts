@@ -30,6 +30,8 @@ export const Insets = {
     ScrollViewWithFloatingHeader: {top: Header.HEIGHT + 25, bottom: 25}
 };
 
+export const BlankImageUri = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=";
+
 export default StyleSheet.create({
     flex1: {flex: 1},
     flexRow: {flex: 1, flexDirection: 'row'},

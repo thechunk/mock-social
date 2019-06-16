@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {PureComponent} from 'react';
-import {Image} from 'react-native';
 import AlbumContainer from '../common/album-container/AlbumContainer';
 import styles from './styles';
+import {BlankImageUri} from "../../styles/global";
+import LoadedImage from "../common/image/LoadedImage";
 
 export default class PhotoHero extends PureComponent<IPhotoHero> {
     render() {
@@ -10,10 +11,10 @@ export default class PhotoHero extends PureComponent<IPhotoHero> {
             <AlbumContainer
                 userId={this.props.userId}
                 limit={1}
-                renderItem={v => <Image
+                renderItem={v => <LoadedImage
                     style={styles.photoHero}
                     source={{uri: v.url}}
-                    defaultSource={{uri: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}} />} />
+                    defaultSource={{uri: BlankImageUri}} />} />
         )
     }
 }
