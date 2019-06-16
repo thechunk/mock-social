@@ -10,6 +10,7 @@ import {UserDetail} from '../user-detail/index';
 import {PhotoGrid} from '../photo-grid/index';
 import {AlbumList} from '../album-list/index';
 import {ImageViewer} from '../image-viewer/index';
+import {MapView} from "../map-viewer/index";
 import {BlurView} from '@react-native-community/blur';
 import g from '../../styles/global';
 import styles from './styles';
@@ -55,6 +56,9 @@ const Navigator = createStackNavigator({
             title: navigation.getParam('hydrate').title,
             ...blurredHeaderOptions
         })
+    },
+    MapView: {
+        screen: MapView
     }
 });
 export default Navigator;

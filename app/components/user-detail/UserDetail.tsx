@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {PureComponent} from 'react';
-import {ScrollView, Text, TouchableWithoutFeedback, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import withUserData from '../../hoc/withUserData';
 import withNavigationParamsAsProps from '../../hoc/withNavigationParamsAsProps';
 import UserDetailTabs from './UserDetailTabs';
@@ -11,6 +11,7 @@ import UserDetailAlbums from "./UserDetailAlbums";
 import {Loader} from "../common/loader/index";
 import {inherited} from "../user-list/styles";
 import {default as g, Insets} from '../../styles/global';
+import UserDetailAddress from "./UserDetailAddress";
 
 export class UserDetail extends PureComponent<IWithUserDataProps & IWithUserDataOptionalProps &
     IWithNavigationParamsAsProps & NavigationInjectedProps> {
@@ -39,17 +40,7 @@ export class UserDetail extends PureComponent<IWithUserDataProps & IWithUserData
                             </View>
 
                             <Text style={styles.sectionHeaderText}>My Address</Text>
-                            <View style={[styles.callOutSection, g.roundedBorder]}>
-                                <TouchableWithoutFeedback>
-                                    <View >
-                                        <Text>
-                                            {`${this.props.user.address.suite} ${this.props.user.address.street}`}
-                                        </Text>
-                                        <Text>{this.props.user.address.city}</Text>
-                                        <Text>{this.props.user.address.zipcode}</Text>
-                                    </View>
-                                </TouchableWithoutFeedback>
-                            </View>
+                            <UserDetailAddress user={this.props.user} navigation={this.props.navigation} />
 
                             <Text style={styles.sectionHeaderText}>My Albums</Text>
                             <UserDetailAlbums userId={this.props.user.id} />

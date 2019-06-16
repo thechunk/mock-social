@@ -1,0 +1,3 @@
+interface IMapViewScreen {
+    hydrate: IUser
+}

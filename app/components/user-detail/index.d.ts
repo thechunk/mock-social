@@ -2,6 +2,10 @@ interface IPhotoHero {
     userId: number
 }
 
+interface IUserDetailAddress {
+    user: IUser
+}
+
 interface IUserDetailAlbums {
     userId: number
 }
