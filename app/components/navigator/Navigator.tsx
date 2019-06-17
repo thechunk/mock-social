@@ -31,7 +31,7 @@ const blurredHeaderOptions: NavigationScreenConfig<NavigationScreenOptions> = {
 const Navigator = createStackNavigator({
     UserList: {
         screen: UserList,
-        navigationOptions: { title: 'Users', ...blurredHeaderOptions }
+        navigationOptions: {title: 'Users', ...blurredHeaderOptions}
     },
     UserDetail: {
         screen: UserDetail,
@@ -42,7 +42,7 @@ const Navigator = createStackNavigator({
     },
     AlbumList: {
         screen: AlbumList,
-        navigationOptions: { title: 'Albums' }
+        navigationOptions: {title: 'Albums', ...blurredHeaderOptions}
     },
     PhotoGrid: {
         screen: PhotoGrid,

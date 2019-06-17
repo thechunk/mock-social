@@ -36,7 +36,7 @@ class UserList extends PureComponent<IWithUserListDataProps & NavigationScreenPr
                         titleStyle={[inherited.title]}
                         subtitleStyle={[inherited.subtitle]} />
                 )} />
-        )
+        );
     }
 }
 

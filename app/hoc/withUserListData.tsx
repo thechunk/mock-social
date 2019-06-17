@@ -1,6 +1,5 @@
 import React, {ComponentType, FC, useEffect, useState} from 'react';
 import {UsersApi} from '../classes/Api';
-import {Loader} from "../components/common/loader/index";
 
 const withUserListData = <P extends IWithUserListDataProps>(Component: ComponentType<P>):
     FC<HocOptional<P, IWithUserListDataProps>> => (props: HocOptional<P, IWithUserListDataProps>) => {

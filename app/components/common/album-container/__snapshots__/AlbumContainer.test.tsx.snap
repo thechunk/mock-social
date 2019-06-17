@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlbumContainer renders correctly 1`] = `
+<Component
+  id={0}
+  limit={1}
+  renderItem={[Function]}
+/>
+`;

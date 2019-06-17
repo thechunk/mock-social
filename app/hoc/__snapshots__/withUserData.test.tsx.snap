@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withUserData wrapper renders correctly 1`] = `
+<Component
+  id={1}
+  loading={true}
+  user={null}
+/>
+`;

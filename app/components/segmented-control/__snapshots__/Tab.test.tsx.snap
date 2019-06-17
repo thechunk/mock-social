@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab renders correctly 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[Function]}
+  style={
+    Array [
+      undefined,
+      null,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        undefined,
+        null,
+      ]
+    }
+  >
+    Title
+  </Text>
+</TouchableOpacity>
+`;

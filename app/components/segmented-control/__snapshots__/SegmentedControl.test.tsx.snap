@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SegmentedControl renders correctly 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "selectedTab": 0,
+      "setSelectedTab": [Function],
+    }
+  }
+>
+  <View />
+</ContextProvider>
+`;

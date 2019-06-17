@@ -2,6 +2,7 @@ import * as React from 'react';
 import {PureComponent} from "react";
 import {ActivityIndicator, Animated, Image, ImageProps} from "react-native";
 import styles from './styles';
+import {Loader} from "../loader/index";
 
 export default class LoadedImage extends PureComponent<ImageProps & ILoadedImage, ILoadedImageState> {
     constructor(props: ImageProps) {
@@ -21,7 +22,7 @@ export default class LoadedImage extends PureComponent<ImageProps & ILoadedImage
         return (
             <>
                 {this.state.loading && this.props.showSpinner
-                    ? <ActivityIndicator size="small" style={[this.props.style, styles.imageLoader]} />
+                    ? <Loader loading={true} style={styles.imageLoader} />
                     : null}
                 <Animated.View style={[this.props.style, {opacity: this.state.opacity}]}>
                     <Image {...this.props as ImageProps} onLoadEnd={this.onImageLoaded}/>

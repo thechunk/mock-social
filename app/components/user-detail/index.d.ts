@@ -16,6 +16,12 @@ interface IUserTabs {
 
 interface IUserDetailPostsTab {
 }
+interface IUserDetailPostsTabState {
+    opacity: import('react-native').Animated.Value
+}
 
 interface IUserDetailTodosTab {
+}
+interface IUserDetailTodosTabState {
+    opacity: import('react-native').Animated.Value
 }

@@ -6,6 +6,8 @@ import {ImageListCell} from "../common/list";
 import withNavigationParamsAsProps from "../../hoc/withNavigationParamsAsProps";
 import {NavigationInjectedProps} from "react-navigation";
 import styles, {inherited} from "./styles";
+import {Loader} from "../common/loader/index";
+import g, {Insets} from "../../styles/global";
 
 class AlbumList extends PureComponent<IAlbumList & NavigationInjectedProps & IWithUserAlbumsDataProps &
     IWithUserAlbumsDataOptionalProps> {
@@ -17,8 +19,13 @@ class AlbumList extends PureComponent<IAlbumList & NavigationInjectedProps & IWi
     }
 
     render() {
-        return (
-            <FlatList data={this.props.albums} keyExtractor={v => v.id.toString()} renderItem={v => (
+        return this.props.loading ? <Loader loading={this.props.loading} style={inherited.loader} /> : (
+            <FlatList
+                contentContainerStyle={g.scrollViewHeaderOffset}
+                scrollIndicatorInsets={Insets.ScrollViewWithFloatingHeader}
+                data={this.props.albums}
+                keyExtractor={v => v.id.toString()}
+                renderItem={v => (
                 <ImageListCell
                     key={v.index}
                     id={v.item.id}

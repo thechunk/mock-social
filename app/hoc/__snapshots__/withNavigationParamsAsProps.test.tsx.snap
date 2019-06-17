@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withNavigationParamsAsProps wrapper renders correctly 1`] = `
+<withNavigation(Component)
+  foo="bar"
+  navigation={
+    Object {
+      "state": Object {
+        "params": Object {
+          "foo": "bar",
+        },
+      },
+    }
+  }
+/>
+`;
