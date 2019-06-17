@@ -12,7 +12,7 @@ import {AlbumList} from '../album-list/index';
 import {ImageViewer} from '../image-viewer/index';
 import {MapView} from "../map-viewer/index";
 import {BlurView} from '@react-native-community/blur';
-import g from '../../styles/global';
+import g, {Color} from '../../styles/global';
 import styles from './styles';
 import {View} from "react-native";
 
@@ -24,13 +24,14 @@ const blurredHeaderOptions: NavigationScreenConfig<NavigationScreenOptions> = {
                 style={g.flex1} />
         </View>
     ),
+    headerTintColor: Color.PrimaryDarkAccent,
     headerTransparent: true
 };
 
 const Navigator = createStackNavigator({
     UserList: {
         screen: UserList,
-        navigationOptions: { title: 'Users' }
+        navigationOptions: { title: 'Users', ...blurredHeaderOptions }
     },
     UserDetail: {
         screen: UserDetail,
@@ -58,7 +59,11 @@ const Navigator = createStackNavigator({
         })
     },
     MapView: {
-        screen: MapView
+        screen: MapView,
+        navigationOptions: ({navigation}: NavigationInjectedProps) => ({
+            title: `${navigation.getParam('hydrate').address.suite} ${navigation.getParam('hydrate').address.street}`,
+            ...blurredHeaderOptions
+        })
     }
 });
 export default Navigator;

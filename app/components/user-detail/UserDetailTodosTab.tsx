@@ -19,7 +19,7 @@ class UserDetailTodosTab extends PureComponent<IUserDetailTodosTab & IWithTodosD
                                 name={v.completed ? "ios-checkmark-circle-outline" : "ios-radio-button-off"}
                                 size={30} />
                         )}
-                        cellStyle={[inherited.cell]}
+                        cellStyle={[inherited.cell, styles.todoCell]}
                         titleStyle={[inherited.title]}
                         subtitleStyle={inherited.subtitle} />
                 ))}

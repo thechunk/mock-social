@@ -7,7 +7,15 @@ import styles from "./styles";
 
 class MapViewScreen extends PureComponent<IMapViewScreen & NavigationInjectedProps> {
     render() {
-        return <MapView coordinates={this.props.hydrate.address.geo} style={styles.view} />;
+        const {lat, lng} = this.props.hydrate.address.geo;
+        return <MapView
+            region={{
+                latitude: lat,
+                longitude: lng,
+                latitudeDelta: 0.8,
+                longitudeDelta: 0.8
+            }}
+            style={styles.view} />;
     }
 }
 

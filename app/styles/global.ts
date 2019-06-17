@@ -1,13 +1,19 @@
 import {PixelRatio, StyleSheet} from "react-native";
 import {Header} from "react-navigation";
+import DeviceInfo from 'react-native-device-info';
+
+const statusBarHeight = DeviceInfo.hasNotch() ? 25 : 0;
+const bottomPadding = DeviceInfo.hasNotch() ? 25 : 0;
 
 export enum Color {
     Separator = 'rgba(0, 0, 0, 0.2)',
     White = '#fff',
     Black = '#000',
     PrimaryAccent = '#5e7dc2',
-    SecondaryAccent = '#d5a419',
-    Background = '#e6f0ff'
+    PrimaryDarkAccent = '#424656',
+    SecondaryAccent = '#c06171',
+    SecondaryDarkAccent = '#872e42',
+    Background = '#a6abbd'
 }
 export enum FontSize {
     ListCellTitle = 16,
@@ -20,6 +26,7 @@ export enum FontSize {
 export enum Dimensions {
     SeparatorWidth = PixelRatio.roundToNearestPixel(0.5),
     Offset = 12,
+    TabHeight = 40,
     CellHeight = 48,
     ElementsHorizontalPadding = 8,
     InnerLargePadding = 24,
@@ -27,7 +34,7 @@ export enum Dimensions {
 }
 
 export const Insets = {
-    ScrollViewWithFloatingHeader: {top: Header.HEIGHT + 25, bottom: 25}
+    ScrollViewWithFloatingHeader: {top: Header.HEIGHT + statusBarHeight, bottom: 25}
 };
 
 export const BlankImageUri = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=";
@@ -55,7 +62,7 @@ export default StyleSheet.create({
         overflow: 'hidden'
     },
     scrollViewHeaderOffset: {
-        paddingTop: Header.HEIGHT + 25,
-        paddingBottom: 25
+        paddingTop: Header.HEIGHT + statusBarHeight,
+        paddingBottom: bottomPadding
     }
 })

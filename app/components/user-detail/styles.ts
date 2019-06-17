@@ -77,6 +77,15 @@ export default StyleSheet.create({
         color: g.Color.Black
     },
 
+    callOutAccessory: {
+        flex: 0,
+    },
+
+    callOutAddress: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+
     tabBar: {
         flexDirection: 'row',
         flexWrap: 'nowrap',
@@ -85,14 +94,14 @@ export default StyleSheet.create({
     },
     tab: {
         flex: 1,
-        height: g.Dimensions.CellHeight,
+        height: g.Dimensions.TabHeight,
         backgroundColor: g.Color.SecondaryAccent,
         justifyContent: 'center',
         alignItems: 'center',
-        borderTopLeftRadius: g.Dimensions.CellHeight / 2,
-        borderTopRightRadius: g.Dimensions.CellHeight / 2,
-        borderBottomLeftRadius: g.Dimensions.CellHeight / 2,
-        borderBottomRightRadius: g.Dimensions.CellHeight / 2,
+        borderTopLeftRadius: g.Dimensions.TabHeight / 2,
+        borderTopRightRadius: g.Dimensions.TabHeight / 2,
+        borderBottomLeftRadius: g.Dimensions.TabHeight / 2,
+        borderBottomRightRadius: g.Dimensions.TabHeight / 2,
         borderWidth: 2,
         borderColor: 'transparent',
     },
@@ -100,7 +109,7 @@ export default StyleSheet.create({
         marginLeft: g.Dimensions.Offset
     },
     tabActive: {
-        borderColor: 'rgba(255, 255, 255, 0.3)'
+        borderColor: 'rgba(0, 0, 0, 0.3)'
     },
     tabTextInactive: {
         color: g.Color.White
@@ -119,8 +128,14 @@ export default StyleSheet.create({
         borderTopWidth: g.Dimensions.SeparatorWidth
     },
 
+    todoCell: {
+        paddingTop: g.Dimensions.Offset,
+        paddingBottom: g.Dimensions.Offset
+    },
+
     sectionHeaderText: {
         margin: g.Dimensions.Offset,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: g.Color.Black
     }
 });

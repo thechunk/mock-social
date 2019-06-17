@@ -26,7 +26,7 @@ export default class LoadedImage extends PureComponent<ImageProps & ILoadedImage
                 <Animated.View style={[this.props.style, {opacity: this.state.opacity}]}>
                     <Image {...this.props as ImageProps} onLoadEnd={this.onImageLoaded}/>
                 </Animated.View>
-        </>
+            </>
         );
     }
 }

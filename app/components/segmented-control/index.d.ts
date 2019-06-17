@@ -8,6 +8,9 @@ interface ISegmentedControlContext {
 interface IContent {
     id: number
 }
+interface IContentState {
+    tabStates: any
+}
 
 interface ITab {
     id: number,

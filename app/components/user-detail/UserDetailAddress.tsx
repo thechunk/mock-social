@@ -2,8 +2,9 @@ import * as React from 'react';
 import {PureComponent} from "react";
 import {TouchableWithoutFeedback, View, Text} from "react-native";
 import styles from "./styles";
-import g from '../../styles/global';
+import g, {Color} from '../../styles/global';
 import {NavigationInjectedProps} from "react-navigation";
+import Icon from 'react-native-vector-icons/Ionicons';
 import withNavigationParamsAsProps from "../../hoc/withNavigationParamsAsProps";
 
 class UserDetailAddress extends PureComponent<IUserDetailAddress & NavigationInjectedProps &
@@ -21,12 +22,19 @@ class UserDetailAddress extends PureComponent<IUserDetailAddress & NavigationInj
         return (
             <View style={[styles.callOutSection, g.roundedBorder]}>
                 <TouchableWithoutFeedback onPress={this.onAddressPress}>
-                    <View>
-                        <Text>
-                            {`${this.props.user.address.suite} ${this.props.user.address.street}`}
-                        </Text>
-                        <Text>{this.props.user.address.city}</Text>
-                        <Text>{this.props.user.address.zipcode}</Text>
+                    <View style={styles.callOutAddress}>
+                        <View style={g.flex1}>
+                            <Text>
+                                {`${this.props.user.address.suite} ${this.props.user.address.street}`}
+                            </Text>
+                            <Text>{this.props.user.address.city}</Text>
+                            <Text>{this.props.user.address.zipcode}</Text>
+                        </View>
+                        <Icon
+                            style={styles.callOutAccessory}
+                            name="ios-arrow-dropright"
+                            size={30}
+                            color={Color.SecondaryAccent} />
                     </View>
                 </TouchableWithoutFeedback>
             </View>

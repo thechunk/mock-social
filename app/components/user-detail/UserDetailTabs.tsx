@@ -13,7 +13,7 @@ export default class UserDetailTabs extends PureComponent<IUserTabs> {
                 <SegmentedControl>
                     <TabBar style={styles.tabBar}>
                         <Tab
-                            inactiveStyle={[styles.tab, {backgroundColor: Color.PrimaryAccent}]}
+                            inactiveStyle={[styles.tab, {backgroundColor: Color.SecondaryAccent}]}
                             activeStyle={styles.tabActive}
                             inactiveTextStyle={styles.tabTextInactive}
                             activeTextStyle={styles.tabTextActive}
