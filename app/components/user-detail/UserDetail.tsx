@@ -40,7 +40,7 @@ export class UserDetail extends PureComponent<IWithUserDataProps & IWithUserData
                             </View>
 
                             <Text style={styles.sectionHeaderText}>My Address</Text>
-                            <UserDetailAddress user={this.props.user} navigation={this.props.navigation} />
+                            <UserDetailAddress user={this.props.user} />
 
                             <Text style={styles.sectionHeaderText}>My Albums</Text>
                             <UserDetailAlbums userId={this.props.user.id} />

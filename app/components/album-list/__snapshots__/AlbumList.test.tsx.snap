@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserList renders correctly 1`] = `
+exports[`AlbumList renders correctly 1`] = `
 <FlatList
   contentContainerStyle={
     Object {
@@ -8,7 +8,7 @@ exports[`UserList renders correctly 1`] = `
       "paddingTop": 89,
     }
   }
-  data={Array []}
+  data={Object {}}
   disableVirtualization={false}
   horizontal={false}
   initialNumToRender={10}

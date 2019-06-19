@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadedImage renders correctly 1`] = `
+<Fragment>
+  <AnimatedComponent
+    style={
+      Array [
+        undefined,
+        Object {
+          "opacity": 0,
+        },
+      ]
+    }
+  >
+    <Image
+      onLoadEnd={[Function]}
+      source={
+        Object {
+          "uri": "uri",
+        }
+      }
+    />
+  </AnimatedComponent>
+</Fragment>
+`;

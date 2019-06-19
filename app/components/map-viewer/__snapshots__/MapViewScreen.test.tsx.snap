@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapViewScreen renders correctly 1`] = `
+<_class
+  region={
+    Object {
+      "latitude": 1.2,
+      "latitudeDelta": 0.8,
+      "longitude": 2.3,
+      "longitudeDelta": 0.8,
+    }
+  }
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+/>
+`;

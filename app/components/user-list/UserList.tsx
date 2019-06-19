@@ -8,7 +8,7 @@ import {inherited} from './styles';
 import {Loader} from "../common/loader/index";
 import g, {Insets, Color} from "../../styles/global";
 
-class UserList extends PureComponent<IWithUserListDataProps & NavigationScreenProps> {
+export class UserList extends PureComponent<IWithUserListDataProps & NavigationScreenProps> {
     navigateToDetail(user: IUser) {
         return (event: GestureResponderEvent) => {
             this.props.navigation.navigate('UserDetail',

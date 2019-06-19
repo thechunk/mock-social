@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageViewerScreen renders correctly 1`] = `
+<_class
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+  url="https://url"
+/>
+`;

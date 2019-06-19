@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhotoGridCell renders correctly 1`] = `
+<TouchableImage
+  source={
+    Object {
+      "uri": "https://url",
+    }
+  }
+  style={Object {}}
+/>
+`;

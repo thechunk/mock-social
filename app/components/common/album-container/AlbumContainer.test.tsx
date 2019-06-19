@@ -5,6 +5,6 @@ import {Text} from 'react-native';
 
 describe('AlbumContainer', () => {
     it('renders correctly', () => {
-        expect(shallow(<AlbumContainer userId={0} limit={1} renderItem={v => <Text>{v.url}</Text>}/>)).toMatchSnapshot();
+        expect(shallow(<AlbumContainer userId={0} limit={1} renderItem={() => {}} withAlbums={() => {}}/>)).toMatchSnapshot();
     });
 });

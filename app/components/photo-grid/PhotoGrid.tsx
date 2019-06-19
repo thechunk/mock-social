@@ -7,7 +7,7 @@ import {NavigationInjectedProps} from "react-navigation";
 import withNavigationParamsAsProps from "../../hoc/withNavigationParamsAsProps";
 import {default as g, Insets} from '../../styles/global';
 
-class PhotoGrid extends PureComponent<IPhotoGrid & NavigationInjectedProps & IWithUserPhotosDataProps> {
+export class PhotoGrid extends PureComponent<IPhotoGrid & NavigationInjectedProps & IWithUserPhotosDataProps> {
     private columns: number = 4;
     private imageWidth: number = 0;
 

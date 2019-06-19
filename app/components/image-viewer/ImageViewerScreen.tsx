@@ -5,7 +5,7 @@ import {NavigationInjectedProps} from "react-navigation";
 import withNavigationParamsAsProps from "../../hoc/withNavigationParamsAsProps";
 import styles from './styles';
 
-class ImageViewerScreen extends PureComponent<IImageViewerScreen & NavigationInjectedProps> {
+export class ImageViewerScreen extends PureComponent<IImageViewerScreen & NavigationInjectedProps> {
     render() {
         return <ImageViewer url={this.props.hydrate.url} style={styles.viewer} />;
     }

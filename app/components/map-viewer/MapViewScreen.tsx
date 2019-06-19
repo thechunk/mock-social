@@ -5,7 +5,7 @@ import {NavigationInjectedProps} from "react-navigation";
 import withNavigationParamsAsProps from "../../hoc/withNavigationParamsAsProps";
 import styles from "./styles";
 
-class MapViewScreen extends PureComponent<IMapViewScreen & NavigationInjectedProps> {
+export class MapViewScreen extends PureComponent<IMapViewScreen & NavigationInjectedProps> {
     render() {
         const {lat, lng} = this.props.hydrate.address.geo;
         return <MapView

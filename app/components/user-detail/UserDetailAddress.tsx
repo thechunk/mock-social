@@ -3,11 +3,11 @@ import {PureComponent} from "react";
 import {TouchableWithoutFeedback, View, Text} from "react-native";
 import styles from "./styles";
 import g, {Color} from '../../styles/global';
-import {NavigationInjectedProps} from "react-navigation";
+import {NavigationInjectedProps, withNavigation} from "react-navigation";
 import Icon from 'react-native-vector-icons/Ionicons';
 import withNavigationParamsAsProps from "../../hoc/withNavigationParamsAsProps";
 
-class UserDetailAddress extends PureComponent<IUserDetailAddress & NavigationInjectedProps &
+export class UserDetailAddress extends PureComponent<IUserDetailAddress & NavigationInjectedProps &
     IWithNavigationParamsAsProps> {
     constructor(props: IUserDetailAddress & NavigationInjectedProps & IWithNavigationParamsAsProps) {
         super(props);
@@ -42,4 +42,4 @@ class UserDetailAddress extends PureComponent<IUserDetailAddress & NavigationInj
     }
 }
 
-export default withNavigationParamsAsProps(UserDetailAddress);
+export default withNavigation(withNavigationParamsAsProps(UserDetailAddress));

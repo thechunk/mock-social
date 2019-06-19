@@ -4,6 +4,6 @@ import UserDetailTabs from './UserDetailTabs';
 
 describe('UserDetailTabs', () => {
     it('renders correctly', () => {
-        expect(shallow(<UserDetailTabs/>)).toMatchSnapshot();
+        expect(shallow(<UserDetailTabs user={{id: 1}} />)).toMatchSnapshot();
     });
 });

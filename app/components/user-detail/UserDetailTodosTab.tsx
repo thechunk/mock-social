@@ -8,7 +8,7 @@ import styles, {inherited} from "./styles";
 import {Loader} from "../common/loader/index";
 import {Color} from "../../styles/global";
 
-class UserDetailTodosTab extends PureComponent<IUserDetailTodosTab & IWithTodosDataProps & IWithTodosDataOptionalProps,
+export class UserDetailTodosTab extends PureComponent<IUserDetailTodosTab & IWithTodosDataProps & IWithTodosDataOptionalProps,
     IUserDetailTodosTabState> {
     constructor(props: IUserDetailTodosTab & IWithTodosDataProps & IWithTodosDataOptionalProps) {
         super(props);

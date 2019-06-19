@@ -4,6 +4,10 @@ exports[`ListCell renders correctly 1`] = `
 <View>
   <TouchableOpacity
     activeOpacity={0.2}
-  />
+  >
+    <Text>
+      Foo
+    </Text>
+  </TouchableOpacity>
 </View>
 `;

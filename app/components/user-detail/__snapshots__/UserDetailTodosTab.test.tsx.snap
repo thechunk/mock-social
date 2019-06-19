@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDetailTodosTab renders correctly 1`] = `
+<AnimatedComponent
+  style={
+    Array [
+      Object {
+        "borderTopColor": "rgba(0, 0, 0, 0.2)",
+        "borderTopWidth": 0.5,
+        "marginTop": 12,
+      },
+      Object {
+        "opacity": 0,
+      },
+    ]
+  }
+>
+  <TitleSubtitleListCell
+    cellStyle={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "minHeight": 48,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+        },
+        Object {
+          "paddingBottom": 12,
+          "paddingTop": 12,
+        },
+      ]
+    }
+    key="1"
+    leftAccessory={[Function]}
+    subtitleStyle={
+      Object {
+        "fontSize": 12,
+      }
+    }
+    title="title"
+    titleStyle={
+      Array [
+        Object {
+          "fontSize": 16,
+        },
+      ]
+    }
+  />
+</AnimatedComponent>
+`;

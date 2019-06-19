@@ -9,7 +9,7 @@ import styles, {inherited} from "./styles";
 import {Loader} from "../common/loader/index";
 import g, {Insets} from "../../styles/global";
 
-class AlbumList extends PureComponent<IAlbumList & NavigationInjectedProps & IWithUserAlbumsDataProps &
+export class AlbumList extends PureComponent<IAlbumList & NavigationInjectedProps & IWithUserAlbumsDataProps &
     IWithUserAlbumsDataOptionalProps> {
     navigateToPhotoGrid(album: IAlbum) {
         return (event: GestureResponderEvent) => {

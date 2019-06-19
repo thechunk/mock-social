@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDetailAlbums renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 12,
+        "marginLeft": 12,
+        "marginRight": 12,
+      },
+      Object {
+        "height": 176,
+      },
+    ]
+  }
+>
+  <AlbumContainer
+    limit={4}
+    renderItem={[Function]}
+    userId={1}
+    withAlbums={[Function]}
+  />
+</View>
+`;

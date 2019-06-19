@@ -7,7 +7,8 @@ interface IUserDetailAddress {
 }
 
 interface IUserDetailAlbums {
-    userId: number
+    userId: number,
+    initialState?: Array<IAlbum>
 }
 
 interface IUserTabs {

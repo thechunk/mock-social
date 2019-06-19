@@ -7,6 +7,14 @@ global.flushAwaitable = (doneCallback: Function) => {
     return new Promise(resolve => setImmediate(resolve));
 };
 
+const originalConsoleError = console.error;
+console.error = (message) => {
+    if (message.startsWith('Warning:')) {
+        return;
+    }
+    originalConsoleError(message);
+};
+
 jest.mock('react-native-device-info', () => ({
     hasNotch: () => true
 }));

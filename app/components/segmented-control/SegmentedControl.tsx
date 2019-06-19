@@ -6,7 +6,6 @@ import SegmentedControlContext from './SegmentedControlContext';
 const TabBar = require('./TabBar').default;
 const Content = require('./Content').default;
 
-
 const SegmentedControl: FunctionComponent<ISegmentedControl> = (props) => {
     const [selectedTab, setSelectedTab] = useState<number>(0);
 

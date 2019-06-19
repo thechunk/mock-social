@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserList renders correctly 1`] = `
+exports[`PhotoGrid renders correctly 1`] = `
 <FlatList
   contentContainerStyle={
     Object {
@@ -8,13 +8,12 @@ exports[`UserList renders correctly 1`] = `
       "paddingTop": 89,
     }
   }
-  data={Array []}
   disableVirtualization={false}
   horizontal={false}
   initialNumToRender={10}
   keyExtractor={[Function]}
-  maxToRenderPerBatch={10}
-  numColumns={1}
+  maxToRenderPerBatch={3}
+  numColumns={4}
   onEndReachedThreshold={2}
   removeClippedSubviews={false}
   renderItem={[Function]}

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDetailPostsTab renders correctly 1`] = `
+<AnimatedComponent
+  style={
+    Array [
+      Object {
+        "borderTopColor": "rgba(0, 0, 0, 0.2)",
+        "borderTopWidth": 0.5,
+        "marginTop": 12,
+      },
+      Object {
+        "opacity": 0,
+      },
+    ]
+  }
+>
+  <TitleSubtitleListCell
+    cellStyle={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "minHeight": 48,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+        },
+        Object {
+          "backgroundColor": "#fff",
+          "padding": 12,
+        },
+      ]
+    }
+    key="1"
+    subtitle="body"
+    subtitleStyle={
+      Object {
+        "fontSize": 12,
+      }
+    }
+    title="title"
+    titleStyle={
+      Object {
+        "fontSize": 16,
+      }
+    }
+  />
+</AnimatedComponent>
+`;

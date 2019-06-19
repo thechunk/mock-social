@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhotoHero renders correctly 1`] = `
+<AlbumContainer
+  limit={1}
+  renderItem={[Function]}
+/>
+`;

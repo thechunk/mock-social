@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDetailTabs renders correctly 1`] = `
+<Fragment>
+  <SegmentedControl>
+    <TabBar
+      style={
+        Object {
+          "flexDirection": "row",
+          "flexWrap": "nowrap",
+          "paddingLeft": 12,
+          "paddingRight": 12,
+        }
+      }
+    >
+      <Tab
+        activeStyle={
+          Object {
+            "borderColor": "rgba(0, 0, 0, 0.3)",
+          }
+        }
+        activeTextStyle={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+        id={0}
+        inactiveStyle={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#c06171",
+              "borderBottomLeftRadius": 20,
+              "borderBottomRightRadius": 20,
+              "borderColor": "transparent",
+              "borderTopLeftRadius": 20,
+              "borderTopRightRadius": 20,
+              "borderWidth": 2,
+              "flex": 1,
+              "height": 40,
+              "justifyContent": "center",
+            },
+            Object {
+              "backgroundColor": "#c06171",
+            },
+          ]
+        }
+        inactiveTextStyle={
+          Object {
+            "color": "#fff",
+          }
+        }
+        title="Posts"
+      />
+      <Tab
+        activeStyle={
+          Object {
+            "borderColor": "rgba(0, 0, 0, 0.3)",
+          }
+        }
+        activeTextStyle={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+        id={1}
+        inactiveStyle={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#c06171",
+              "borderBottomLeftRadius": 20,
+              "borderBottomRightRadius": 20,
+              "borderColor": "transparent",
+              "borderTopLeftRadius": 20,
+              "borderTopRightRadius": 20,
+              "borderWidth": 2,
+              "flex": 1,
+              "height": 40,
+              "justifyContent": "center",
+            },
+            Object {
+              "marginLeft": 12,
+            },
+            Object {
+              "backgroundColor": "#c06171",
+            },
+          ]
+        }
+        inactiveTextStyle={
+          Object {
+            "color": "#fff",
+          }
+        }
+        title="To-Dos"
+      />
+    </TabBar>
+    <Content
+      id={0}
+    >
+      <Component
+        id={1}
+      />
+    </Content>
+    <Content
+      id={1}
+    >
+      <Component
+        id={1}
+      />
+    </Content>
+  </SegmentedControl>
+</Fragment>
+`;

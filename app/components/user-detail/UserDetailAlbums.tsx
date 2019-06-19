@@ -17,16 +17,9 @@ const UserDetailAlbums: FC<IUserDetailAlbums & NavigationScreenProps> =
             - g.Dimensions.ElementsHorizontalPadding
             - g.Dimensions.Offset / limit;
 
-        const [albums, setAlbums] = useState<Array<IAlbum>>([]);
+        const [albums, setAlbums] = useState<Array<IAlbum>>(props.initialState ? props.initialState : []);
         const withAlbums = (albums: Array<IAlbum>) => {
             setAlbums(albums);
-        };
-
-        const onTapAlbum = (id: number, album: IAlbum) => (event: GestureResponderEvent) => {
-            props.navigation.navigate('PhotoGrid', {id, hydrate: album});
-        };
-        const onTapMore = (id: number) => (event: GestureResponderEvent) => {
-            props.navigation.navigate('AlbumList', {id});
         };
 
         return (
@@ -39,7 +32,7 @@ const UserDetailAlbums: FC<IUserDetailAlbums & NavigationScreenProps> =
                         <TouchableImage
                             key={photo.id}
                             style={[g.default.roundedBorder, {width: imageWidth, height: imageWidth}]}
-                            onPress={onTapAlbum(photo.albumId, album)}
+                            onPress={UserDetailAlbums.prototype.onTapAlbum(props, photo.albumId, album)}
                             source={{uri: photo.url}}
                             defaultSource={{uri: BlankImageUri}} />
                     )} />
@@ -49,7 +42,7 @@ const UserDetailAlbums: FC<IUserDetailAlbums & NavigationScreenProps> =
                             underlayColor={g.Color.White}
 
                             style={[styles.userAlbumsMore, g.default.roundedBorder, {width: imageWidth, height: imageWidth}]}
-                            onPress={onTapMore(props.userId)}>
+                            onPress={UserDetailAlbums.prototype.onTapMore(props, props.userId)}>
                             <>
                                 <Text style={styles.userAlbumsMoreCount}>{albums.length - limit + 1}</Text>
                                 <Text style={styles.userAlbumsMoreText}>more&hellip;</Text>
@@ -59,5 +52,15 @@ const UserDetailAlbums: FC<IUserDetailAlbums & NavigationScreenProps> =
                     : null}
             </View>
         )
-    }
+    };
+UserDetailAlbums.prototype.onTapAlbum =
+    (props: IUserDetailAlbums & NavigationScreenProps, id: number, album: IAlbum) => (event: GestureResponderEvent) => {
+        props.navigation.navigate('PhotoGrid', {id, hydrate: album});
+    };
+UserDetailAlbums.prototype.onTapMore =
+    (props: IUserDetailAlbums & NavigationScreenProps, id: number) => (event: GestureResponderEvent) => {
+        props.navigation.navigate('AlbumList', {id});
+    };
+
+export {UserDetailAlbums};
 export default withNavigation(UserDetailAlbums);

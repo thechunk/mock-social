@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TouchableImage renders correctly 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  source={
+    Object {
+      "uri": "uri",
+    }
+  }
+>
+  <LoadedImage
+    defaultSource={
+      Object {
+        "uri": "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=",
+      }
+    }
+    showSpinner={true}
+    source={
+      Object {
+        "uri": "uri",
+      }
+    }
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</TouchableOpacity>
+`;

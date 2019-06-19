@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SegmentedControlContext contains context values 1`] = `
+<Context.Provider
+  value={
+    Object {
+      "selectedTab": 1,
+      "setSelectedTab": [Function],
+    }
+  }
+/>
+`;
+
+exports[`SegmentedControlContext contains default context values 1`] = `<Context.Provider />`;
