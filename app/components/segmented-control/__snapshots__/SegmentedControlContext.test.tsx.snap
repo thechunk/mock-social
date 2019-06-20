@@ -10,5 +10,3 @@ exports[`SegmentedControlContext contains context values 1`] = `
   }
 />
 `;
-
-exports[`SegmentedControlContext contains default context values 1`] = `<Context.Provider />`;

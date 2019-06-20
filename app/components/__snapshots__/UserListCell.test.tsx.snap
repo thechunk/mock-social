@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TitleSubtitleListCell renders correctly 1`] = `
-<ListCell>
-  <Text>
-    title
-  </Text>
-</ListCell>
-`;

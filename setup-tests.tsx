@@ -19,3 +19,7 @@ jest.mock('react-native-device-info', () => ({
     hasNotch: () => true
 }));
 jest.mock('react-native-vector-icons/Ionicons', () => ({}));
+
+// React Navigation generates random React keys, which makes
+// snapshot testing fail. Mock the randomness to keep from failing.
+Date.now = jest.fn(() => 0);
