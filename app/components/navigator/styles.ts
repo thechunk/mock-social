@@ -7,6 +7,10 @@ export default StyleSheet.create({
         shadowColor: Color.Black,
         shadowOpacity: 0.2,
         shadowRadius: 2,
-        elevation: 2
+        elevation: 5
+    },
+    solidStackHeader: {
+        backgroundColor: Color.White,
+        elevation: 5
     }
 });

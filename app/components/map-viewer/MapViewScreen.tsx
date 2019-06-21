@@ -13,7 +13,8 @@ export class MapViewScreen extends PureComponent<IMapViewScreen & NavigationInje
                 latitude: lat,
                 longitude: lng,
                 latitudeDelta: 0.8,
-                longitudeDelta: 0.8
+                longitudeDelta: 0.8,
+                googleMapZoom: 8
             }}
             style={styles.view} />;
     }

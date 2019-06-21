@@ -10,18 +10,23 @@ import {UserDetail} from '../user-detail/index';
 import {PhotoGrid} from '../photo-grid/index';
 import {AlbumList} from '../album-list/index';
 import {ImageViewer} from '../image-viewer/index';
-import {MapView} from "../map-viewer/index";
+import {MapView} from '../map-viewer/index';
 import {BlurView} from '@react-native-community/blur';
 import g, {Color} from '../../styles/global';
 import styles from './styles';
-import {View} from "react-native";
+import {Platform, View} from "react-native";
 
 const blurredHeaderOptions: NavigationScreenConfig<NavigationScreenOptions> = {
     headerBackground: (
         <View style={[g.flex1, styles.stackHeader]}>
-            <BlurView
-                blurType='xlight'
-                style={g.flex1} />
+            {Platform.OS === 'ios'
+                ? (
+                    <BlurView
+                        blurType='xlight'
+                        style={g.flex1} />
+                )
+                : <View style={[g.flex1, styles.solidStackHeader]} />
+            }
         </View>
     ),
     headerTintColor: Color.PrimaryDarkAccent,

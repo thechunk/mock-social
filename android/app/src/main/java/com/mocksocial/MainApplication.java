@@ -6,6 +6,8 @@ import com.facebook.react.ReactApplication;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.cmcewen.blurview.BlurViewPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
+import com.mocksocial.RNImageViewer.RNImageViewerPackage;
+import com.mocksocial.RNMapView.RNMapViewPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -29,6 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNMapViewPackage(),
+            new RNImageViewerPackage(),
             new RNDeviceInfo(),
             new BlurViewPackage(),
             new LinearGradientPackage(),

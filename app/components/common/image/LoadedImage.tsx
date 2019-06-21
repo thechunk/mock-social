@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {PureComponent} from "react";
-import {ActivityIndicator, Animated, Image, ImageProps} from "react-native";
+import {Animated, Image, ImageProps} from "react-native";
 import styles from './styles';
 import {Loader} from "../loader/index";
 
