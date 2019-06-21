@@ -16,7 +16,8 @@ import com.google.android.gms.maps.model.LatLng
 class RNMapViewManager : SimpleViewManager<FrameLayout>() {
     val REACT_CLASS = "RNMapView"
     val FRAGMENT_TAG = "RNMapViewGoogleMapFragment"
-    var initialCenter: CameraUpdate? = null
+    var initialCenter: LatLng? = null
+    var initialZoom: Float = 0f
 
     override fun getName(): String {
         return REACT_CLASS
@@ -38,7 +39,10 @@ class RNMapViewManager : SimpleViewManager<FrameLayout>() {
             (fragment.view.parent as ViewGroup).removeView(fragment.view)
         }
 
-        (fragment as MapFragment).getMapAsync { googleMap -> googleMap?.moveCamera(this.initialCenter) }
+        (fragment as MapFragment).getMapAsync { googleMap ->
+            val center = CameraUpdateFactory.newLatLngZoom(this.initialCenter, this.initialZoom)
+            googleMap.moveCamera(center)
+        }
 
         view.addView(fragment.view, FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.MATCH_PARENT)
@@ -51,7 +55,8 @@ class RNMapViewManager : SimpleViewManager<FrameLayout>() {
         val lng = region.getString("longitude")?.toDouble()
         val zoom = region.getDouble("googleMapZoom").toFloat()
         if (lat is Double && lng is Double) {
-            this.initialCenter = CameraUpdateFactory.newLatLngZoom(LatLng(lat, lng), zoom);
+            this.initialCenter = LatLng(lat, lng)
+            this.initialZoom = zoom
         }
     }
 }
